@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="standeePageTitle">श्री कृपा Midway Restaurant - Luxury Table Standee (Front & Back)</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        :root {
+            --bg-parchment: #faf4e8;
+            --bg-parchment-mid: #f3e6cd;
+            --bg-parchment-dark: #e8d3b0;
+            --royal-maroon: #730018;
+            --royal-maroon-dark: #4d0010;
+            --gold-primary: #c59b27;
+            --gold-light: #fef4cf;
+            --gold-border: rgba(197, 155, 39, 0.45);
+            --gold-border-strong: rgba(197, 155, 39, 0.9);
+            --veg-green: #1b7a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #ede6d8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
+
+        .controls-bar {
+            width: 100%;
+            max-width: 520px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--gold-border-strong);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .toggle-btn {
+            background: #ffffff;
+            border: 1.5px solid var(--royal-maroon);
+            color: var(--royal-maroon);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .toggle-btn.active, .toggle-btn:hover {
+            background: var(--royal-maroon);
+            color: #ffffff;
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #c59b27 0%, #8c6b12 100%);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 11px 26px;
+            font-size: 15px;
+            font-weight: 800;
+            border-radius: 24px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .standee-wrapper {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Standee Card Base */
+        .standee-card {
+            width: 440px;
+            height: 700px;
+            background: radial-gradient(circle at 50% 28%, #fffcf5 0%, #f7edd9 55%, #ecd8b6 100%);
+            border: 3.5px solid var(--gold-primary);
+            border-radius: 24px;
+            padding: 22px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(90, 10, 24, 0.25);
+            color: #33261d;
+            text-align: center;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .inner-border {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            right: 9px;
+            bottom: 9px;
+            border: 1.2px solid rgba(197, 155, 39, 0.6);
+            border-radius: 18px;
+            pointer-events: none;
+        }
+        .inner-border-fine {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            right: 13px;
+            bottom: 13px;
+            border: 1px dashed rgba(197, 155, 39, 0.35);
+            border-radius: 14px;
+            pointer-events: none;
+        }
+
+        .diamond-tl { position: absolute; top: 8px; left: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-tr { position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-bl { position: absolute; bottom: 8px; left: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-br { position: absolute; bottom: 8px; right: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
+
+        /* Header */
+        .logo-rim {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            padding: 2.5px;
+            background: linear-gradient(135deg, #fdf3cb 0%, #c59b27 50%, #8c6b12 100%);
+            box-shadow: 0 6px 16px rgba(115, 0, 24, 0.18);
+            margin-bottom: 4px;
+        }
+        .logo-rim img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand-title-hindi {
+            font-family: 'Rozha One', 'Yatra One', serif;
+            font-size: 36px;
+            line-height: 1.1;
+            color: var(--royal-maroon);
+            margin-bottom: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .brand-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--royal-maroon-dark);
+        }
+
+        .veg-pure-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eaf7ed;
+            border: 1px solid rgba(27, 122, 58, 0.4);
+            color: var(--veg-green);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        .gold-line {
+            width: 70%;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 6px 0;
+        }
+
+        /* Front Standee Body */
+        .action-heading {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--royal-maroon-dark);
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+        .action-subheading {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 8px;
+        }
+
+        .qr-frame-box {
+            background: #ffffff;
+            border: 3px solid var(--gold-primary);
+            border-radius: 18px;
+            padding: 10px;
+            box-shadow: 0 8px 20px rgba(90, 10, 24, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 230px;
+            height: 230px;
+            margin-bottom: 8px;
+        }
+        .qr-frame-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .table-pill {
+            background: #ffffff;
+            border: 1.5px solid var(--royal-maroon);
+            border-radius: 20px;
+            padding: 4px 18px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--royal-maroon);
+            margin-bottom: 6px;
+        }
+
+        .purity-badge {
+            font-size: 10px;
+            color: #553408;
+            font-weight: 700;
+            line-height: 1.35;
+            max-width: 340px;
+        }
+
+        /* Back Standee Specific Elements */
+        .back-slogan-wrap {
+            padding: 6px 8px;
+            margin-bottom: 6px;
+        }
+        .slogan-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 12.5px;
+            color: #5a3810;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+        .slogan-hi-bold {
+            font-family: 'Rozha One', serif;
+            font-size: 17px;
+            color: var(--royal-maroon);
+            margin-bottom: 2px;
+        }
+
+        .packages-card-back {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1.5px solid var(--gold-primary);
+            border-radius: 14px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .pkg-head-back {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--royal-maroon);
+            margin-bottom: 6px;
+        }
+        .pkg-row-back {
+            display: flex;
+            justify-content: space-around;
+            gap: 8px;
+        }
+        .pkg-item-back {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid var(--gold-border);
+            border-radius: 10px;
+            padding: 6px;
+        }
+        .pkg-item-name {
+            font-size: 11px;
+            font-weight: 800;
+            color: #333;
+        }
+        .pkg-item-price {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #8c6b12;
+        }
+
+        .ambience-strip-back {
+            display: flex;
+            gap: 6px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .amb-thumb-box {
+            flex: 1;
+            height: 75px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gold-primary);
+        }
+        .amb-thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Standee Footer (Call / Address) */
+        .standee-footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-address {
+            font-size: 10px;
+            color: #5a4030;
+            line-height: 1.35;
+        }
+        .footer-phone {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--royal-maroon);
+            margin-top: 1px;
+        }
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--royal-maroon);
+            margin-top: 3px;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: none !important;
+                padding: 0 !important;
+            }
+            .controls-bar {
+                display: none !important;
+            }
+            .standee-wrapper {
+                gap: 0 !important;
+            }
+            .standee-card {
+                box-shadow: none !important;
+                margin: auto !important;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls-bar">
+        <button class="print-btn" onclick="window.print()">
+            <span>🖨️</span> Print Standee (Ctrl + P)
+        </button>
+
+        <div class="btn-row">
+            <button class="toggle-btn active" onclick="showSide('both')">📑 Both Sides (Front & Back)</button>
+            <button class="toggle-btn" onclick="showSide('front')">🖼️ Front Only (QR Menu)</button>
+            <button class="toggle-btn" onclick="showSide('back')">🏛️ Back Only (Ambience & Packages)</button>
+        </div>
+    </div>
+
+    <div class="standee-wrapper">
+        
+        <!-- ===============================================================
+             FRONT STANDÉE (QR CODE + TABLE ORDERING)
+             =============================================================== -->
+        <div class="standee-card" id="frontStandee">
+            <div class="inner-border"></div>
+            <div class="inner-border-fine"></div>
+            <div class="diamond-tl"></div><div class="diamond-tr"></div><div class="diamond-bl"></div><div class="diamond-br"></div>
+
+            <header style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div class="logo-rim">
+                    <img src="logo_with_gold_rim.png" alt="श्री कृपा Logo">
+                </div>
+                <h1 class="brand-title-hindi">
+                    श्री कृपा <span style="font-size: 22px;">🪶</span>
+                </h1>
+                <div class="brand-subtitle">MIDWAY RESTAURANT</div>
+                <div class="veg-pure-tag">
+                    <span>🌿</span> 100% PURE VEG • PURE DESI GHEE <span>🌿</span>
+                </div>
+                <div class="gold-line"></div>
+            </header>
+
+            <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <h2 class="action-heading">SCAN FOR DIGITAL MENU</h2>
+                <div class="action-subheading">📖 Explore 170+ Dishes • Instant Table Order</div>
+
+                <div class="qr-frame-box">
+                    <img src="qr_code.png" alt="Scan Digital Menu QR">
+                </div>
+
+                <div class="table-pill">
+                    TABLE NO: ________
+                </div>
+
+                <p class="purity-badge">
+                    Pure Desi Ghee, Amul Butter & Pure Paneer Used in Cooking • 20 Min Fresh Preparation
+                </p>
+            </main>
+
+            <footer class="standee-footer">
+                <p class="footer-address">
+                    Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Indore (Agra - Mumbai Hwy)
+                </p>
+                <p class="footer-phone">
+                    Call / Table Order: +91-91110-30307
+                </p>
+                <p class="footer-quote">
+                    एक बार खाइए, बार-बार आइए 🙏
+                </p>
+            </footer>
+        </div>
+
+        <!-- ===============================================================
+             BACK STANDÉE (AMBIENCE + PARTY PACKAGES + CONTACT)
+             =============================================================== -->
+        <div class="standee-card" id="backStandee">
+            <div class="inner-border"></div>
+            <div class="inner-border-fine"></div>
+            <div class="diamond-tl"></div><div class="diamond-tr"></div><div class="diamond-bl"></div><div class="diamond-br"></div>
+
+            <header style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div class="logo-rim">
+                    <img src="logo_with_gold_rim.png" alt="श्री कृपा Logo">
+                </div>
+                <h1 class="brand-title-hindi">
+                    श्री कृपा <span style="font-size: 22px;">🪶</span>
+                </h1>
+                <div class="brand-subtitle">MIDWAY RESTAURANT</div>
+                <div class="veg-pure-tag">
+                    <span>🌿</span> 100% PURE VEG • PURE DESI GHEE <span>🌿</span>
+                </div>
+                <div class="gold-line"></div>
+            </header>
+
+            <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div class="back-slogan-wrap">
+                    <div class="slogan-hi-bold">एक बार खाइए, बार-बार आइए</div>
+                    <div class="slogan-title">"You Can Enjoy Delicious Food Serving Happiness, One Plate At A Time"</div>
+                </div>
+
+                <!-- Banquet & Party Packages -->
+                <div class="packages-card-back">
+                    <div class="pkg-head-back">BANQUET & PARTY PACKAGES</div>
+                    <div class="pkg-row-back">
+                        <div class="pkg-item-back">
+                            <div class="pkg-item-name">Kitty Party</div>
+                            <div class="pkg-item-price">Started @ ₹299</div>
+                        </div>
+                        <div class="pkg-item-back">
+                            <div class="pkg-item-name">Dinner Party</div>
+                            <div class="pkg-item-price">Started @ ₹549</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ambience Strip (Page 14) -->
+                <div class="ambience-strip-back">
+                    <div class="amb-thumb-box"><img src="assets/ambience_exterior.jpg" alt="Grand Entrance"></div>
+                    <div class="amb-thumb-box"><img src="assets/ambience_reception.jpg" alt="Reception Desk"></div>
+                    <div class="amb-thumb-box"><img src="assets/ambience_arch.jpg" alt="Floral Arch"></div>
+                </div>
+
+                <p class="purity-badge" style="margin-top: 4px;">
+                    श्री कृपा रेस्टोरेंट में स्वाद, सेवा और विश्वास एक साथ पाइए।
+                </p>
+            </main>
+
+            <footer class="standee-footer">
+                <p class="footer-address">
+                    Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Near Highway Toll Plaza, Indore
+                </p>
+                <p class="footer-phone">
+                    Bookings / Helpline: +91-91110-30307
+                </p>
+                <p class="footer-quote">
+                    Thank You For Visiting श्री कृपा Midway Restaurant 🙏
+                </p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+        function showSide(side) {
+            var front = document.getElementById('frontStandee');
+            var back = document.getElementById('backStandee');
+            var buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+
+            if (side === 'both') {
+                front.style.display = 'flex';
+                back.style.display = 'flex';
+                buttons[0].classList.add('active');
+            } else if (side === 'front') {
+                front.style.display = 'flex';
+                back.style.display = 'none';
+                buttons[1].classList.add('active');
+            } else if (side === 'back') {
+                front.style.display = 'none';
+                back.style.display = 'flex';
+                buttons[2].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
