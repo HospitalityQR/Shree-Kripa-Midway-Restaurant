@@ -56,7 +56,7 @@ var RESTAURANT_CONFIG = {
     footerCity: "Royal Highway Hospitality • Rau, Indore (Agra - Mumbai Hwy)",
 
     // 8. Hosted Digital Menu URL on HospitalityQR
-    landingPageUrl: "https://hospitalityqr.github.io/shree-kripa-QR/"
+    landingPageUrl: "https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/"
 };
 
 if (typeof module !== 'undefined' && module.exports) {

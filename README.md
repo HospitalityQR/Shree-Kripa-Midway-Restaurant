@@ -26,16 +26,16 @@ Shree Kripa Menu QR/
 ## 💡 "404 Not Found" Solution & QR Setup
 
 ### 404 Kyun Aaya Tha?
-Pehle QR code me GitHub Pages ka dummy link (`https://hospitalityqr.github.io/shree-kripa-QR/`) encode tha, jo GitHub par live upload na hone ke karan phone se scan karne par **404 Not Found** bata raha tha.
+Pehle QR code me repo create na hone ke karan link (`https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/`) phone se scan karne par **404 Not Found** bata raha tha.
 
 ### Ab Yeh Kaise Theek Hua?
 1. **Dynamic QR in `standee.html`**:
    - `standee.html` ko jab aap browser me kholenge, to uske upar ek input box diya gaya hai.
-   - Wahan aap apna **live website link** (jaise aapka GitHub Pages link: `https://hospitalityqr.github.io/shree-kripa-QR/`) ya local Wi-Fi test IP (jaise: `http://192.168.1.5:8080`) daalkar **"Update QR"** par click karein.
+   - Wahan aap apna **live website link** (`https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/`) ya local Wi-Fi test IP (jaise: `http://192.168.1.5:8080`) daalkar **"Update QR"** par click karein.
    - QR code turant naye link ke sath update ho jayega aur **kabhi bhi 404 nahi aayega**!
 2. **Python se Custom QR Standee Generate Karein**:
    ```bash
-   python generate_qr.py "https://hospitalityqr.github.io/shree-kripa-QR/"
+   python generate_qr.py "https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/"
    ```
    Aap jo bhi link denge, script usi ka 300 DPI high-resolution `table_standee_printable.png` bana dega!
 

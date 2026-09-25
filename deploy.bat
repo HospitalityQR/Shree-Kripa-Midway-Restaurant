@@ -11,6 +11,6 @@ git push origin main:gh-pages
 echo.
 echo ========================================================
 echo  Deployment complete!
-echo  Visit: https://hospitalityqr.github.io/shree-kripa-QR/
+echo  Visit: https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/
 echo ========================================================
 pause
