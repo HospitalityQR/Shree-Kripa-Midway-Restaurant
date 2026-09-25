@@ -67,10 +67,11 @@
 
         body {
             font-family: var(--font-sans);
-            background-color: var(--bg-parchment);
+            background-color: #faf4e8;
             background-image: 
-                radial-gradient(circle at 50% 0%, #fffbf2 0%, #f7edd9 50%, #edd8b5 100%),
-                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c59b27' fill-opacity='0.035'%3E%3Cpath d='M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z'/%3E%3C/g%3E%3C/svg%3E");
+                radial-gradient(circle at 50% 140px, rgba(255, 235, 179, 0.5) 0%, transparent 65%),
+                radial-gradient(circle at 50% 18%, #fffef8 0%, #fbf3e2 40%, #f3e3c5 75%, #ebd3aa 100%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c59b27' fill-opacity='0.045' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 45H0l15-15L0 15h15l15 15zm0-30L15 15H0L15 0h15zm0 60L15 45H0l15 15h15zm30-30L45 45H30l15-15L30 15h15l15 15zm0-30L45 15H30L45 0h15zm0 60L45 45H30l15 15h15z'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23c59b27' fill-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
             color: var(--text-body);
             min-height: 100vh;
             display: flex;
@@ -85,12 +86,25 @@
         body::before {
             content: '';
             position: fixed;
-            top: -10%;
+            top: -12%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 580px;
+            height: 580px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(254, 244, 207, 0.12) 40%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -15%;
             left: 50%;
             transform: translateX(-50%);
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(115, 0, 24, 0.06) 50%, transparent 75%);
+            background: radial-gradient(circle, rgba(197, 155, 39, 0.12) 0%, rgba(115, 0, 24, 0.05) 50%, transparent 70%);
             z-index: 0;
             pointer-events: none;
         }
@@ -1407,22 +1421,7 @@
                 </div>
             </a>
 
-            <!-- Card 2: Call Waiter / Desk -->
-            <a href="tel:9111030307" class="action-card" id="uiCallCard">
-                <div class="card-left">
-                    <div class="icon-box icon-call-box">📞</div>
-                    <div class="card-info">
-                        <div class="card-title">Call Waiter / Desk</div>
-                        <div class="card-desc">Call: +91-91110-30307 • Instant Table Service</div>
-                        <div class="card-tag">⚡ One-Tap Assistance</div>
-                    </div>
-                </div>
-                <div class="arrow-btn" aria-label="Call">
-                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-            </a>
-
-            <!-- Card 3: Party Packages -->
+            <!-- Card 2: Party Packages -->
             <a href="javascript:void(0)" class="action-card" onclick="switchView('packagesView')">
                 <div class="card-left">
                     <div class="icon-box icon-party-box">🎉</div>
@@ -1458,16 +1457,13 @@
             <!-- Dynamically populated -->
         </div>
 
-        <!-- 4. Section Tabs -->
+        <!-- 4. Section Tabs (Digital Menu & Party Packages) -->
         <nav class="view-mode-tabs" role="tablist">
             <button class="mode-tab active" data-target="menuView" onclick="switchView('menuView')">
                 <span>📖</span> Digital Menu
             </button>
             <button class="mode-tab" data-target="packagesView" onclick="switchView('packagesView')">
                 <span>🎉</span> Party Packages
-            </button>
-            <button class="mode-tab" data-target="ambienceView" onclick="switchView('ambienceView')">
-                <span>🏛️</span> Ambience
             </button>
         </nav>
 
@@ -1505,11 +1501,11 @@
                     <div class="package-price-tag">Started @ ₹299</div>
                 </div>
                 <p class="package-desc">
-                    Special banquet packages designed for kitty parties, birthday celebrations, and family daytime gatherings with delicious starters and main courses.
+                    Special banquet packages designed for kitty parties, birthday celebrations, and family daytime gatherings with delicious starters, fresh main course, and sweets.
                 </p>
-                <a href="tel:9111030307" class="package-inquire-btn">
-                    <span>📞</span> Book Kitty Party: +91-91110-30307
-                </a>
+                <div style="margin-top: 8px; font-size: 11.5px; color: var(--gold-dark); font-weight: 700;">
+                    ✨ Starters & Snacks • 🍛 Main Course • 🍨 Sweet Treat
+                </div>
             </div>
 
             <div class="package-card">
@@ -1518,52 +1514,21 @@
                     <div class="package-price-tag">Started @ ₹549</div>
                 </div>
                 <p class="package-desc">
-                    Lavish multi-course buffet dining experience with Paneer exclusives, tandoori starters, Dal Makhani, fresh tandoor breads, and desi ghee desserts.
+                    Lavish multi-course buffet dining experience with Paneer exclusives, tandoori starters, Dal Makhani, fresh tandoor breads, and pure desi ghee desserts.
                 </p>
-                <a href="tel:9111030307" class="package-inquire-btn">
-                    <span>📞</span> Book Dinner Party: +91-91110-30307
-                </a>
-            </div>
-        </section>
-
-        <!-- 7. Ambience View -->
-        <section class="ambience-view" id="ambienceView">
-            <div class="gallery-grid">
-                <div class="gallery-card full-width">
-                    <img src="assets/ambience_exterior.jpg" alt="Grand Highway Entrance" class="gallery-img">
-                    <div class="gallery-caption">Grand Highway Entrance • Agra - Mumbai Hwy</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="assets/ambience_reception.jpg" alt="Illuminated Reception" class="gallery-img">
-                    <div class="gallery-caption">Royal Reception Counter</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="assets/ambience_arch.jpg" alt="Entrance Arch" class="gallery-img">
-                    <div class="gallery-caption">Floral Grand Welcome</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="assets/ambience_stage.jpg" alt="Floral Stage" class="gallery-img">
-                    <div class="gallery-caption">Grand Festive Decor</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="assets/ambience_hall.jpg" alt="Dining Hall" class="gallery-img">
-                    <div class="gallery-caption">Family Dining Hall</div>
+                <div style="margin-top: 8px; font-size: 11.5px; color: var(--gold-dark); font-weight: 700;">
+                    👑 Royal Buffet • 🧀 Paneer Exclusives • 🫓 Tandoor Basket • 🍮 Pure Ghee Halwa
                 </div>
             </div>
         </section>
 
-        <!-- 8. 28 PAARROO STYLE RESTAURANT META & CALL BUTTON FOOTER -->
+        <!-- 7. RESTAURANT META & HOSPITALITY FOOTER -->
         <footer class="footer-section">
             <div class="restaurant-meta">
                 <div class="meta-item">
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                     <span id="uiAddress">Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Agra - Mumbai Hwy, Indore</span>
                 </div>
-                
-                <a href="tel:9111030307" class="call-btn" id="uiPhoneBtn">
-                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    <span id="uiPhoneText">Call / Table Order: +91-91110-30307</span>
-                </a>
             </div>
 
             <p class="copyright">
@@ -1686,9 +1651,10 @@
                 document.getElementById('uiLogo').src = cfg.logoImage;
             }
             if (cfg.phoneNumber) {
-                document.getElementById('uiCallCard').href = `tel:${cfg.phoneNumber}`;
-                document.getElementById('uiPhoneBtn').href = `tel:${cfg.phoneNumber}`;
-                document.getElementById('uiPhoneText').innerText = `Call / Table Order: ${cfg.phoneDisplay || cfg.phoneNumber}`;
+                var callCard = document.getElementById('uiCallCard');
+                if (callCard) callCard.href = `tel:${cfg.phoneNumber}`;
+                var phoneBtn = document.getElementById('uiPhoneBtn');
+                if (phoneBtn) phoneBtn.href = `tel:${cfg.phoneNumber}`;
             }
             if (cfg.mapUrl) {
                 document.getElementById('uiMapCard').href = cfg.mapUrl;
@@ -2025,9 +1991,10 @@
         }
 
         function switchView(targetId) {
-            document.getElementById('menuView').style.display = targetId === 'menuView' ? 'block' : 'none';
-            document.getElementById('packagesView').style.display = targetId === 'packagesView' ? 'flex' : 'none';
-            document.getElementById('ambienceView').style.display = targetId === 'ambienceView' ? 'flex' : 'none';
+            var menuEl = document.getElementById('menuView');
+            var pkgEl = document.getElementById('packagesView');
+            if (menuEl) menuEl.style.display = targetId === 'menuView' ? 'block' : 'none';
+            if (pkgEl) pkgEl.style.display = targetId === 'packagesView' ? 'flex' : 'none';
 
             var tabs = document.querySelectorAll('.mode-tab');
             tabs.forEach(function(t) {

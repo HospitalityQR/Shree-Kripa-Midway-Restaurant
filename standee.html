@@ -106,12 +106,15 @@
             flex-wrap: wrap;
         }
 
-        /* Standee Card Base */
+        /* Standee Card Base - Royal Parchment Canvas */
         .standee-card {
             width: 440px;
             height: 700px;
-            background: radial-gradient(circle at 50% 28%, #fffcf5 0%, #f7edd9 55%, #ecd8b6 100%);
-            border: 3.5px solid var(--gold-primary);
+            background-color: #faf3e6;
+            background-image: 
+                radial-gradient(circle at 50% 28%, #fffef8 0%, #faedd5 45%, #f0dcb8 80%, #e5cb9e 100%),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c59b27' fill-opacity='0.035'%3E%3Cpath d='M20 20L10 30H0l10-10L0 10h10l10 10zm0-20L10 10H0L10 0h10zm0 40L10 30H0l10 10h10zm20-20L30 30H20l10-10L20 10h10l10 10zm0-20L30 10H20L30 0h10zm0 40L30 30H20l10 10h10z'/%3E%3C/g%3E%3C/svg%3E");
+            border: 4px solid var(--gold-primary);
             border-radius: 24px;
             padding: 22px 18px 18px;
             display: flex;
@@ -408,14 +411,14 @@
         <div class="btn-row">
             <button class="toggle-btn active" onclick="showSide('both')">📑 Both Sides (Front & Back)</button>
             <button class="toggle-btn" onclick="showSide('front')">🖼️ Front Only (QR Menu)</button>
-            <button class="toggle-btn" onclick="showSide('back')">🏛️ Back Only (Ambience & Packages)</button>
+            <button class="toggle-btn" onclick="showSide('back')">🎉 Back Only (Party Packages & Purity)</button>
         </div>
     </div>
 
     <div class="standee-wrapper">
         
         <!-- ===============================================================
-             FRONT STANDÉE (QR CODE + TABLE ORDERING)
+             FRONT STANDÉE (QR CODE + 170+ DIGITAL MENU)
              =============================================================== -->
         <div class="standee-card" id="frontStandee">
             <div class="inner-border"></div>
@@ -438,14 +441,10 @@
 
             <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
                 <h2 class="action-heading">SCAN FOR DIGITAL MENU</h2>
-                <div class="action-subheading">📖 Explore 170+ Dishes • Instant Table Order</div>
+                <div class="action-subheading">📖 Explore 170+ Dishes • Pure Desi Ghee</div>
 
-                <div class="qr-frame-box">
+                <div class="qr-frame-box" style="margin-top: 6px; margin-bottom: 14px;">
                     <img src="qr_code.png" alt="Scan Digital Menu QR">
-                </div>
-
-                <div class="table-pill">
-                    TABLE NO: ________
                 </div>
 
                 <p class="purity-badge">
@@ -457,9 +456,6 @@
                 <p class="footer-address">
                     Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Indore (Agra - Mumbai Hwy)
                 </p>
-                <p class="footer-phone">
-                    Call / Table Order: +91-91110-30307
-                </p>
                 <p class="footer-quote">
                     एक बार खाइए, बार-बार आइए 🙏
                 </p>
@@ -467,7 +463,7 @@
         </div>
 
         <!-- ===============================================================
-             BACK STANDÉE (AMBIENCE + PARTY PACKAGES + CONTACT)
+             BACK STANDÉE (PARTY PACKAGES + PURITY PROMISE + SLOGANS)
              =============================================================== -->
         <div class="standee-card" id="backStandee">
             <div class="inner-border"></div>
@@ -501,22 +497,25 @@
                         <div class="pkg-item-back">
                             <div class="pkg-item-name">Kitty Party</div>
                             <div class="pkg-item-price">Started @ ₹299</div>
+                            <div style="font-size: 9.5px; color: #666; margin-top: 3px;">Starters, Main Course & Dessert</div>
                         </div>
                         <div class="pkg-item-back">
                             <div class="pkg-item-name">Dinner Party</div>
                             <div class="pkg-item-price">Started @ ₹549</div>
+                            <div style="font-size: 9.5px; color: #666; margin-top: 3px;">Grand Multi-Course Buffet Feast</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ambience Strip (Page 14) -->
-                <div class="ambience-strip-back">
-                    <div class="amb-thumb-box"><img src="assets/ambience_exterior.jpg" alt="Grand Entrance"></div>
-                    <div class="amb-thumb-box"><img src="assets/ambience_reception.jpg" alt="Reception Desk"></div>
-                    <div class="amb-thumb-box"><img src="assets/ambience_arch.jpg" alt="Floral Arch"></div>
+                <!-- 100% Pure Desi Ghee Purity Promise Card -->
+                <div class="packages-card-back" style="border-color: rgba(115, 0, 24, 0.4); background: rgba(255, 255, 255, 0.85); margin-top: 6px;">
+                    <div class="pkg-head-back" style="font-size: 11.5px; margin-bottom: 4px;">🌿 100% PURE VEG PURITY PROMISE 🌿</div>
+                    <p style="font-size: 10.5px; color: #4a2810; line-height: 1.45; font-weight: 600;">
+                        Pure Desi Ghee, Refined Oil, Amul Butter, Cheese, Milk, Curd, Paneer (Pure) Are Used In Cooking.
+                    </p>
                 </div>
 
-                <p class="purity-badge" style="margin-top: 4px;">
+                <p class="purity-badge" style="margin-top: 8px;">
                     श्री कृपा रेस्टोरेंट में स्वाद, सेवा और विश्वास एक साथ पाइए।
                 </p>
             </main>
@@ -524,9 +523,6 @@
             <footer class="standee-footer">
                 <p class="footer-address">
                     Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Near Highway Toll Plaza, Indore
-                </p>
-                <p class="footer-phone">
-                    Bookings / Helpline: +91-91110-30307
                 </p>
                 <p class="footer-quote">
                     Thank You For Visiting श्री कृपा Midway Restaurant 🙏
