@@ -7,7 +7,7 @@
     
     <!-- Meta Tags for SEO, WhatsApp & Social Sharing -->
     <meta name="description" id="metaDesc" content="श्री कृपा Midway Restaurant (100% Pure Veg), Rau, Indore. Pure Desi Ghee & Amul Butter cooking. Explore Digital Menu, Table Ordering, and Party Packages.">
-    <meta name="theme-color" content="#730018">
+    <meta name="theme-color" content="#06282e">
     
     <!-- Google Fonts: Royal Indian Hospitality & Serif Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,26 +16,29 @@
 
     <style>
         :root {
-            /* Warm Royal Parchment & Cream Palette (Matching Official Menu PDF) */
-            --bg-parchment: #f9f3e5;
-            --bg-parchment-light: #fefcf7;
+            /* Shree Kripa Interior Palette: Peacock Teal Velvet + Warm Golden Cove + Ivory Arch Panels */
+            --peacock-teal-deep: #04181c;
+            --peacock-teal-mid: #083036;
+            --peacock-teal-bright: #0f4e55;
+            --bg-parchment: #faf4e8;
+            --bg-parchment-light: #fffdf8;
             --bg-parchment-deep: #edd8b4;
-            --bg-cream-card: rgba(255, 253, 248, 0.94);
-            --card-border: rgba(197, 155, 39, 0.38);
-            --card-border-hover: rgba(197, 155, 39, 0.85);
+            --bg-cream-card: rgba(255, 252, 245, 0.96);
+            --card-border: rgba(212, 175, 55, 0.48);
+            --card-border-hover: rgba(212, 175, 55, 0.95);
 
-            /* Royal Maroon / Burgundy Brand Colors */
+            /* Royal Maroon & Peacock Teal Accents */
             --royal-maroon: #730018;
-            --royal-maroon-dark: #4a000e;
+            --royal-maroon-dark: #083036;
             --royal-maroon-light: #94172e;
             --royal-crimson: #8b1527;
 
-            /* Luxury Gold Accents */
-            --gold-primary: #c59b27;
-            --gold-light: #fdf3cb;
+            /* Luxury Cove Gold Accents */
+            --gold-primary: #d4af37;
+            --gold-light: #fbe69b;
             --gold-dark: #8c6b12;
-            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-            --gold-gradient-soft: linear-gradient(135deg, #fff3c9 0%, #e0b445 50%, #9e7413 100%);
+            --gold-gradient: linear-gradient(135deg, #fbe69b 0%, #d4af37 50%, #9a7414 100%);
+            --teal-gradient: linear-gradient(135deg, #0f4e55 0%, #06252a 100%);
             --maroon-gradient: linear-gradient(135deg, #8b1527 0%, #500010 100%);
 
             /* Pure Veg Emerald */
@@ -43,19 +46,19 @@
             --veg-green-bg: #eaf7ed;
 
             /* Typography */
-            --text-title: #3a000c;
-            --text-heading: #550716;
-            --text-body: #33261d;
-            --text-muted: #736154;
+            --text-title: #07292e;
+            --text-heading: #730018;
+            --text-body: #2c221a;
+            --text-muted: #69594b;
             --font-royal: 'Cinzel', 'Playfair Display', serif;
             --font-hindi: 'Rozha One', 'Yatra One', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
 
             /* Shadows & Elevation */
-            --shadow-subtle: 0 4px 16px rgba(115, 0, 24, 0.06);
-            --shadow-card: 0 8px 24px rgba(90, 10, 24, 0.08);
-            --shadow-elevated: 0 16px 36px rgba(70, 5, 18, 0.16);
-            --shadow-gold-glow: 0 0 25px rgba(212, 175, 55, 0.35);
+            --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.18);
+            --shadow-card: 0 10px 28px rgba(3, 18, 21, 0.38);
+            --shadow-elevated: 0 18px 42px rgba(2, 14, 17, 0.55);
+            --shadow-gold-glow: 0 0 28px rgba(212, 175, 55, 0.32);
         }
 
         * {
@@ -65,13 +68,20 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-sans);
-            background-color: #faf4e8;
+            background-color: #052024;
             background-image: 
-                radial-gradient(circle at 50% 140px, rgba(255, 235, 179, 0.5) 0%, transparent 65%),
-                radial-gradient(circle at 50% 18%, #fffef8 0%, #fbf3e2 40%, #f3e3c5 75%, #ebd3aa 100%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c59b27' fill-opacity='0.045' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 45H0l15-15L0 15h15l15 15zm0-30L15 15H0L15 0h15zm0 60L15 45H0l15 15h15zm30-30L45 45H30l15-15L30 15h15l15 15zm0-30L45 15H30L45 0h15zm0 60L45 45H30l15 15h15z'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23c59b27' fill-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
+                radial-gradient(circle at 50% 110px, rgba(212, 175, 55, 0.28) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(8, 48, 54, 0.76) 0%, rgba(6, 35, 40, 0.82) 50%, rgba(4, 22, 26, 0.90) 100%),
+                url("assets/interior_hero.jpg");
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
             color: var(--text-body);
             min-height: 100vh;
             display: flex;
@@ -82,16 +92,16 @@
             padding-bottom: 100px;
         }
 
-        /* Ambient Glow Effects */
+        /* Ambient Golden Cove Glow Effects (Inspired by Wave Ceiling Lights & Sun Arches) */
         body::before {
             content: '';
             position: fixed;
-            top: -12%;
+            top: -10%;
             left: 50%;
             transform: translateX(-50%);
-            width: 580px;
-            height: 580px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(254, 244, 207, 0.12) 40%, transparent 70%);
+            width: 620px;
+            height: 460px;
+            background: radial-gradient(circle, rgba(251, 230, 155, 0.22) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 72%);
             z-index: 0;
             pointer-events: none;
         }
@@ -102,9 +112,9 @@
             bottom: -15%;
             left: 50%;
             transform: translateX(-50%);
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(197, 155, 39, 0.12) 0%, rgba(115, 0, 24, 0.05) 50%, transparent 70%);
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(15, 78, 85, 0.35) 0%, rgba(212, 175, 55, 0.08) 50%, transparent 70%);
             z-index: 0;
             pointer-events: none;
         }
@@ -121,12 +131,12 @@
         }
 
         /* =====================================================================
-           1. BRAND HEADER (श्री कृपा MIDWAY RESTAURANT)
+           1. BRAND HEADER (श्री कृपा MIDWAY RESTAURANT - INTERIOR ARCH THEME)
            ===================================================================== */
         .brand-section {
             width: 100%;
-            background: var(--bg-cream-card);
-            border: 1.8px solid var(--card-border-hover);
+            background: linear-gradient(180deg, rgba(255, 253, 247, 0.97) 0%, rgba(252, 245, 229, 0.96) 100%);
+            border: 2.2px solid var(--gold-primary);
             border-radius: 26px;
             padding: 24px 18px 20px;
             text-align: center;
@@ -134,8 +144,8 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 16px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .brand-section::before {
@@ -144,8 +154,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4.5px;
-            background: linear-gradient(90deg, #c59b27, #fdf3cb, #c59b27, #8c6b12);
+            height: 5px;
+            background: linear-gradient(90deg, #8c6b12, #fbe69b, #d4af37, #fbe69b, #8c6b12);
         }
 
         .header-top-badges {
@@ -158,13 +168,14 @@
         }
 
         .online-badge {
-            background: rgba(115, 0, 24, 0.08);
-            border: 1px solid rgba(115, 0, 24, 0.2);
-            color: var(--royal-maroon);
+            background: rgba(8, 48, 54, 0.1);
+            border: 1px solid rgba(8, 48, 54, 0.28);
+            color: var(--peacock-teal-mid);
             padding: 4px 10px;
             border-radius: 20px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            font-weight: 800;
         }
 
         .pure-veg-badge {
@@ -172,7 +183,7 @@
             align-items: center;
             gap: 6px;
             background: var(--veg-green-bg);
-            border: 1px solid rgba(27, 122, 58, 0.3);
+            border: 1px solid rgba(27, 122, 58, 0.35);
             color: var(--veg-green);
             padding: 4px 10px;
             border-radius: 20px;
@@ -197,7 +208,7 @@
             border-radius: 50%;
         }
 
-        /* Circular Logo with Gold Rim & Halo Glow */
+        /* Circular Logo with Golden Sun-Disc Halo */
         .logo-wrapper {
             position: relative;
             margin: 0 auto 12px;
@@ -206,13 +217,13 @@
 
         .logo-glow {
             position: absolute;
-            inset: -8px;
+            inset: -10px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.45) 0%, rgba(197, 155, 39, 0.1) 60%, transparent 80%);
+            background: radial-gradient(circle, rgba(232, 185, 49, 0.55) 0%, rgba(212, 175, 55, 0.18) 60%, transparent 80%);
             animation: pulseGlow 4s ease-in-out infinite alternate;
         }
         @keyframes pulseGlow {
-            0% { transform: scale(0.94); opacity: 0.6; }
+            0% { transform: scale(0.94); opacity: 0.65; }
             100% { transform: scale(1.06); opacity: 1; }
         }
 
@@ -224,7 +235,7 @@
             z-index: 2;
             object-fit: cover;
             border: 3px solid #d4af37;
-            box-shadow: 0 10px 26px rgba(70, 5, 18, 0.22);
+            box-shadow: 0 10px 26px rgba(8, 48, 54, 0.25);
             transition: transform 0.4s ease;
             background: #ffffff;
         }
@@ -267,10 +278,10 @@
             font-size: 17px;
             font-weight: 800;
             letter-spacing: 3.5px;
-            color: var(--royal-maroon-dark);
+            color: var(--peacock-teal-mid);
             text-transform: uppercase;
             margin-top: 2px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .tagline-badge {
@@ -278,13 +289,13 @@
             align-items: center;
             gap: 6px;
             padding: 5px 14px;
-            background: rgba(197, 155, 39, 0.12);
-            border: 1px solid var(--card-border-hover);
+            background: rgba(15, 78, 85, 0.1);
+            border: 1px solid rgba(15, 78, 85, 0.3);
             border-radius: 30px;
             font-size: 11.5px;
             font-weight: 800;
-            color: var(--royal-maroon);
-            letter-spacing: 0.5px;
+            color: var(--peacock-teal-mid);
+            letter-spacing: 0.4px;
             text-transform: uppercase;
             margin-bottom: 12px;
         }
@@ -300,14 +311,14 @@
         .gold-divider::before, .gold-divider::after {
             content: '';
             flex: 1;
-            height: 1px;
+            height: 1.2px;
             background: linear-gradient(90deg, transparent, var(--card-border-hover), transparent);
         }
 
         /* Purity Banner (From PDF Page 1) */
         .purity-pledge {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(255, 245, 219, 0.7) 100%);
-            border: 1px dashed rgba(197, 155, 39, 0.6);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.16) 0%, rgba(255, 248, 225, 0.85) 100%);
+            border: 1.2px dashed rgba(197, 155, 39, 0.75);
             border-radius: 12px;
             padding: 9px 12px;
             margin-bottom: 10px;
@@ -322,7 +333,7 @@
         }
         .purity-text {
             font-size: 11.5px;
-            color: #53380c;
+            color: #4a3208;
             line-height: 1.4;
             font-weight: 600;
         }
@@ -333,42 +344,44 @@
 
         .prep-time-notice {
             font-size: 11px;
-            color: var(--royal-maroon);
-            font-weight: 700;
+            color: var(--peacock-teal-mid);
+            font-weight: 800;
             letter-spacing: 0.3px;
-            background: rgba(115, 0, 24, 0.05);
-            padding: 6px 10px;
+            background: rgba(15, 78, 85, 0.08);
+            border: 1px solid rgba(15, 78, 85, 0.18);
+            padding: 6px 12px;
             border-radius: 8px;
             display: inline-block;
         }
 
         /* =====================================================================
-           2. 28 PAARROO STYLE ACTION CARDS (NO GOOGLE / NO INSTAGRAM)
+           2. 28 PAARROO STYLE ACTION CARDS (CLICK TO JUMP DIRECTLY)
            ===================================================================== */
         .links-wrapper {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .action-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 13px 16px;
+            padding: 14px 16px;
             border-radius: 18px;
             text-decoration: none;
             color: var(--text-body);
             background: var(--bg-cream-card);
-            border: 1.2px solid var(--card-border);
+            border: 1.6px solid var(--card-border);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-card);
+            cursor: pointer;
         }
 
         .action-card::before {
@@ -378,7 +391,7 @@
             left: -100%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
             transition: left 0.75s ease;
         }
 
@@ -389,12 +402,17 @@
         .action-card:hover {
             transform: translateY(-3px);
             border-color: var(--card-border-hover);
-            box-shadow: var(--shadow-elevated), 0 0 16px rgba(197, 155, 39, 0.2);
+            box-shadow: var(--shadow-elevated), 0 0 20px rgba(212, 175, 55, 0.32);
             background: #ffffff;
         }
 
         .action-card:active {
             transform: scale(0.98);
+        }
+
+        .action-card.active-card {
+            border-color: var(--gold-primary);
+            box-shadow: var(--shadow-elevated), 0 0 18px rgba(212, 175, 55, 0.4);
         }
 
         .card-left {
@@ -405,31 +423,25 @@
         }
 
         .icon-box {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             font-size: 22px;
         }
 
         .icon-menu-box {
-            background: var(--maroon-gradient);
-            color: #ffffff;
-            border: 1px solid var(--card-border-hover);
-        }
-
-        .icon-call-box {
-            background: linear-gradient(135deg, #c59b27 0%, #8c6b12 100%);
-            color: #ffffff;
-            border: 1px solid #ffffff;
+            background: var(--teal-gradient);
+            color: var(--gold-light);
+            border: 1.5px solid var(--gold-primary);
         }
 
         .icon-party-box {
-            background: linear-gradient(135deg, #fff3c9 0%, #f7edd9 100%);
+            background: linear-gradient(135deg, #fff3c9 0%, #f7e2a4 100%);
             border: 1.5px solid var(--gold-primary);
             color: var(--royal-maroon);
         }
@@ -441,7 +453,7 @@
         }
 
         .card-title {
-            font-size: 15px;
+            font-size: 15.5px;
             font-weight: 800;
             color: var(--text-title);
             margin-bottom: 2px;
@@ -457,22 +469,22 @@
         .card-tag {
             font-size: 10.5px;
             color: var(--royal-maroon);
-            font-weight: 700;
+            font-weight: 800;
             display: inline-flex;
             align-items: center;
             gap: 4px;
         }
 
         .arrow-btn {
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: rgba(197, 155, 39, 0.12);
-            border: 1.2px solid var(--card-border);
+            background: rgba(212, 175, 55, 0.16);
+            border: 1.4px solid var(--card-border);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--royal-maroon);
+            color: var(--peacock-teal-mid);
             flex-shrink: 0;
             transition: all 0.25s ease;
         }
@@ -482,16 +494,16 @@
             height: 16px;
             fill: none !important;
             stroke: currentColor !important;
-            stroke-width: 2.2;
+            stroke-width: 2.3;
             stroke-linecap: round;
             stroke-linejoin: round;
             display: block;
         }
 
         .action-card:hover .arrow-btn {
-            background: var(--royal-maroon);
-            border-color: var(--royal-maroon);
-            color: #ffffff;
+            background: var(--peacock-teal-mid);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
             transform: translateX(3px);
         }
 
@@ -528,9 +540,9 @@
             width: 72px;
             height: 72px;
             border-radius: 50%;
-            border: 2px solid var(--gold-primary);
+            border: 2.2px solid var(--gold-primary);
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(115, 0, 24, 0.15);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
             margin-bottom: 6px;
             background: #ffffff;
         }
@@ -542,33 +554,37 @@
         .tile-label {
             font-size: 11px;
             font-weight: 700;
-            color: var(--royal-maroon-dark);
+            color: var(--gold-light);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
             text-align: center;
             line-height: 1.2;
         }
 
         /* =====================================================================
-           4. VIEW TABS (Digital Menu / Party Packages / Ambience)
+           4. VIEW TABS (Digital Menu / Party Packages)
            ===================================================================== */
         .view-mode-tabs {
             width: 100%;
             display: flex;
-            background: rgba(115, 0, 24, 0.07);
-            padding: 4px;
+            background: rgba(4, 24, 28, 0.78);
+            backdrop-filter: blur(10px);
+            padding: 5px;
             border-radius: 16px;
             margin-bottom: 16px;
-            border: 1px solid rgba(197, 155, 39, 0.3);
+            border: 1.5px solid var(--card-border);
+            box-shadow: var(--shadow-subtle);
+            scroll-margin-top: 14px;
         }
         .mode-tab {
             flex: 1;
-            padding: 10px 8px;
+            padding: 11px 10px;
             border-radius: 12px;
             border: none;
             background: transparent;
             font-family: var(--font-sans);
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--royal-maroon-dark);
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #d7e8e9;
             cursor: pointer;
             transition: all 0.25s ease;
             display: flex;
@@ -577,9 +593,9 @@
             gap: 6px;
         }
         .mode-tab.active {
-            background: var(--maroon-gradient);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(115, 0, 24, 0.25);
+            background: var(--gold-gradient);
+            color: #04181c;
+            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.38);
         }
 
         /* =====================================================================
@@ -587,29 +603,31 @@
            ===================================================================== */
         .menu-view-container {
             width: 100%;
+            scroll-margin-top: 14px;
         }
 
         .search-box-wrap {
             position: relative;
             width: 100%;
             margin-bottom: 12px;
+            scroll-margin-top: 16px;
         }
         .search-input {
             width: 100%;
             padding: 13px 16px 13px 44px;
             border-radius: 16px;
-            border: 1.5px solid var(--card-border-hover);
-            background: #ffffff;
+            border: 1.8px solid var(--gold-primary);
+            background: rgba(255, 253, 248, 0.98);
             font-family: var(--font-sans);
             font-size: 14px;
             color: var(--text-title);
-            box-shadow: var(--shadow-subtle);
+            box-shadow: var(--shadow-card);
             outline: none;
             transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .search-input:focus {
-            border-color: var(--royal-maroon);
-            box-shadow: 0 0 0 3px rgba(115, 0, 24, 0.12);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.28);
         }
         .search-icon {
             position: absolute;
@@ -618,7 +636,7 @@
             transform: translateY(-50%);
             width: 18px;
             height: 18px;
-            fill: var(--gold-primary);
+            fill: var(--gold-dark);
             pointer-events: none;
         }
         .search-clear {
@@ -656,49 +674,52 @@
             gap: 6px;
             padding: 8px 14px;
             border-radius: 24px;
-            border: 1.2px solid var(--card-border);
-            background: var(--bg-cream-card);
-            color: var(--royal-maroon-dark);
+            border: 1.4px solid var(--card-border);
+            background: rgba(255, 252, 245, 0.94);
+            color: var(--peacock-teal-mid);
             font-size: 12px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.2s ease;
             flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .category-chip:hover {
             border-color: var(--gold-primary);
             background: #ffffff;
         }
         .category-chip.active {
-            background: var(--royal-maroon);
-            color: #ffffff;
-            border-color: var(--royal-maroon);
-            box-shadow: 0 4px 12px rgba(115, 0, 24, 0.25);
+            background: var(--gold-gradient);
+            color: #04181c;
+            border-color: #fbe69b;
+            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
         }
 
         .category-section-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 6px 4px 10px;
-            border-bottom: 1.5px solid var(--card-border);
+            padding: 8px 6px 10px;
+            border-bottom: 1.5px solid rgba(212, 175, 55, 0.45);
             margin-bottom: 12px;
+            scroll-margin-top: 14px;
         }
         .category-title {
             font-family: var(--font-royal);
             font-size: 18px;
             font-weight: 800;
-            color: var(--royal-maroon);
+            color: var(--gold-light);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .category-count {
             font-size: 11.5px;
-            font-weight: 700;
-            background: rgba(197, 155, 39, 0.15);
-            color: var(--gold-dark);
+            font-weight: 800;
+            background: rgba(212, 175, 55, 0.22);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: var(--gold-light);
             padding: 3px 10px;
             border-radius: 12px;
         }
@@ -713,7 +734,7 @@
 
         .dish-card {
             background: var(--bg-cream-card);
-            border: 1.2px solid var(--card-border);
+            border: 1.4px solid var(--card-border);
             border-radius: 18px;
             padding: 12px 14px;
             display: flex;
@@ -774,8 +795,8 @@
 
         .badge-special {
             background: linear-gradient(135deg, #fff3c9, #ffe285);
-            border: 1px solid rgba(197, 155, 39, 0.4);
-            color: #7a5400;
+            border: 1px solid rgba(197, 155, 39, 0.5);
+            color: #6b4900;
             font-size: 9.5px;
             font-weight: 800;
             padding: 2px 7px;
@@ -797,7 +818,7 @@
 
         .badge-pcs {
             font-size: 9.5px;
-            color: #616161;
+            color: #555;
             background: #eee;
             padding: 2px 6px;
             border-radius: 10px;
@@ -822,8 +843,8 @@
 
         .add-btn {
             background: var(--bg-parchment);
-            border: 1.4px solid var(--royal-maroon);
-            color: var(--royal-maroon);
+            border: 1.5px solid var(--peacock-teal-mid);
+            color: var(--peacock-teal-mid);
             padding: 6px 16px;
             border-radius: 20px;
             font-family: var(--font-sans);
@@ -833,9 +854,10 @@
             transition: all 0.2s ease;
         }
         .add-btn:hover {
-            background: var(--royal-maroon);
-            color: #ffffff;
-            box-shadow: 0 4px 10px rgba(115, 0, 24, 0.2);
+            background: var(--peacock-teal-mid);
+            color: var(--gold-light);
+            border-color: var(--gold-primary);
+            box-shadow: 0 4px 10px rgba(8, 48, 54, 0.25);
         }
         .add-btn:active {
             transform: scale(0.92);
@@ -844,20 +866,21 @@
         .qty-controls {
             display: inline-flex;
             align-items: center;
-            background: var(--royal-maroon);
+            background: var(--peacock-teal-mid);
+            border: 1px solid var(--gold-primary);
             border-radius: 20px;
             padding: 2px 4px;
             gap: 6px;
             color: #ffffff;
-            box-shadow: 0 3px 8px rgba(115, 0, 24, 0.25);
+            box-shadow: 0 3px 8px rgba(8, 48, 54, 0.3);
         }
         .qty-btn {
             width: 26px;
             height: 26px;
             border-radius: 50%;
             border: none;
-            background: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            background: rgba(212, 175, 55, 0.25);
+            color: var(--gold-light);
             font-size: 16px;
             font-weight: 800;
             cursor: pointer;
@@ -867,7 +890,7 @@
             line-height: 1;
         }
         .qty-btn:hover {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(212, 175, 55, 0.45);
         }
         .qty-value {
             font-size: 13.5px;
@@ -877,105 +900,88 @@
         }
 
         /* =====================================================================
-           6. PARTY PACKAGES & AMBIENCE VIEWS
+           6. PARTY PACKAGES VIEW
            ===================================================================== */
         .packages-view {
             display: none;
             width: 100%;
             flex-direction: column;
             gap: 14px;
+            scroll-margin-top: 14px;
         }
         .package-card {
             background: var(--bg-cream-card);
-            border: 1.5px solid var(--card-border-hover);
-            border-radius: 20px;
-            padding: 18px;
-            box-shadow: var(--shadow-card);
+            border: 2px solid var(--gold-primary);
+            border-radius: 22px;
+            padding: 20px 18px;
+            box-shadow: var(--shadow-elevated);
             text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
         }
         .package-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
         }
         .package-name {
             font-family: var(--font-royal);
-            font-size: 18px;
+            font-size: 18.5px;
             font-weight: 800;
-            color: var(--royal-maroon);
+            color: var(--peacock-teal-mid);
         }
         .package-price-tag {
-            font-size: 16px;
+            font-size: 15.5px;
             font-weight: 800;
-            color: #8c6b12;
-            background: var(--gold-light);
-            padding: 4px 12px;
+            color: var(--royal-maroon);
+            background: linear-gradient(135deg, #fff5d6 0%, #fbe69b 100%);
+            padding: 5px 14px;
             border-radius: 20px;
-            border: 1px solid var(--card-border);
+            border: 1.5px solid var(--gold-primary);
         }
         .package-desc {
             font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 14px;
+            color: var(--text-body);
+            line-height: 1.55;
+            margin-bottom: 12px;
         }
-        .package-inquire-btn {
+        .back-to-menu-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 11px;
-            background: var(--maroon-gradient);
-            border: none;
-            border-radius: 14px;
-            color: #ffffff;
-            font-size: 13.5px;
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .ambience-view {
-            display: none;
-            width: 100%;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .gallery-card {
-            background: var(--bg-cream-card);
-            border: 1px solid var(--card-border);
+            padding: 13px 18px;
+            background: var(--gold-gradient);
+            border: 1.5px solid #ffffff;
             border-radius: 16px;
-            overflow: hidden;
+            color: #04181c;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
             box-shadow: var(--shadow-card);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .gallery-card.full-width {
-            grid-column: 1 / -1;
-        }
-        .gallery-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-card.full-width .gallery-img {
-            height: 190px;
-        }
-        .gallery-caption {
-            padding: 9px 10px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--royal-maroon);
-            text-align: center;
+        .back-to-menu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-elevated);
         }
 
         /* =====================================================================
-           7. 28 PAARROO STYLE FOOTER & PROMINENT CALL BUTTON
+           7. HOSPITALITY FOOTER
            ===================================================================== */
         .footer-section {
             width: 100%;
@@ -984,13 +990,13 @@
             align-items: center;
             text-align: center;
             gap: 16px;
-            margin-top: 14px;
+            margin-top: 18px;
         }
 
         .restaurant-meta {
             width: 100%;
             background: var(--bg-cream-card);
-            border: 1.5px solid var(--card-border);
+            border: 1.6px solid var(--card-border);
             border-radius: 20px;
             padding: 16px 18px;
             display: flex;
@@ -1005,50 +1011,16 @@
             align-items: center;
             gap: 8px;
             font-size: 12.5px;
-            color: var(--text-body);
+            color: var(--text-title);
+            font-weight: 600;
             line-height: 1.4;
         }
 
         .meta-item svg {
             width: 18px;
             height: 18px;
-            fill: var(--gold-primary);
+            fill: var(--gold-dark);
             flex-shrink: 0;
-        }
-
-        .call-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px 18px;
-            background: var(--maroon-gradient);
-            border: 1.5px solid #d4af37;
-            border-radius: 14px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 0.3px;
-            box-shadow: 0 4px 14px rgba(115, 0, 24, 0.25);
-            transition: all 0.25s ease;
-        }
-
-        .call-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(115, 0, 24, 0.4);
-            border-color: #ffffff;
-        }
-
-        .call-btn:active {
-            transform: scale(0.98);
-        }
-
-        .call-btn svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
         }
 
         .copyright {
@@ -1059,8 +1031,9 @@
         .thanks-note {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 16px;
-            color: var(--royal-maroon);
+            font-size: 16.5px;
+            color: var(--gold-light);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
             font-weight: 800;
             letter-spacing: 0.3px;
             display: block;
@@ -1069,7 +1042,7 @@
 
         .city-note {
             font-size: 12px;
-            color: var(--gold-dark);
+            color: #d5e6e8;
             letter-spacing: 0.5px;
             font-weight: 600;
         }
@@ -1404,16 +1377,16 @@
             </div>
         </header>
 
-        <!-- 2. 28 PAARROO STYLE ACTION CARDS (NO GOOGLE / NO INSTA) -->
+        <!-- 2. 28 PAARROO STYLE ACTION CARDS (CLICK TO JUMP DIRECTLY) -->
         <main class="links-wrapper">
             <!-- Card 1: Explore Digital Menu -->
-            <a href="#menuSection" class="action-card" onclick="scrollToMenu()">
+            <a href="javascript:void(0)" class="action-card active-card" id="cardExploreMenu" onclick="openSection('menuView', true)">
                 <div class="card-left">
                     <div class="icon-box icon-menu-box">📖</div>
                     <div class="card-info">
                         <div class="card-title">Explore Digital Menu</div>
                         <div class="card-desc">170+ Authentic Pure Veg Dishes, Starters & Platters</div>
-                        <div class="card-tag">✨ Instant Table Order & Tray</div>
+                        <div class="card-tag">✨ Tap to Jump to Menu & Order Tray</div>
                     </div>
                 </div>
                 <div class="arrow-btn" aria-label="Open Menu">
@@ -1422,13 +1395,13 @@
             </a>
 
             <!-- Card 2: Party Packages -->
-            <a href="javascript:void(0)" class="action-card" onclick="switchView('packagesView')">
+            <a href="javascript:void(0)" class="action-card" id="cardPartyPackages" onclick="openSection('packagesView', true)">
                 <div class="card-left">
                     <div class="icon-box icon-party-box">🎉</div>
                     <div class="card-info">
                         <div class="card-title">Kitty & Dinner Party Packages</div>
                         <div class="card-desc">Kitty Packages @ ₹299 • Dinner Buffet @ ₹549</div>
-                        <div class="card-tag">🎈 Celebrations & Get-Togethers</div>
+                        <div class="card-tag">🎈 Tap to View Celebration Packages</div>
                     </div>
                 </div>
                 <div class="arrow-btn" aria-label="View Packages">
@@ -1436,7 +1409,7 @@
                 </div>
             </a>
 
-            <!-- Card 4: Location & Highway Route -->
+            <!-- Card 3: Location & Highway Route -->
             <a href="https://www.google.com/maps/search/?api=1&query=Shree+Kripa+Midway+Restaurant+Pigdamber+Rau+Indore" target="_blank" rel="noopener noreferrer" class="action-card" id="uiMapCard">
                 <div class="card-left">
                     <div class="icon-box" style="background: var(--veg-green-bg); color: var(--veg-green); border: 1.5px solid rgba(27, 122, 58, 0.4);">📍</div>
@@ -1458,11 +1431,11 @@
         </div>
 
         <!-- 4. Section Tabs (Digital Menu & Party Packages) -->
-        <nav class="view-mode-tabs" role="tablist">
-            <button class="mode-tab active" data-target="menuView" onclick="switchView('menuView')">
+        <nav class="view-mode-tabs" id="sectionTabsNav" role="tablist">
+            <button class="mode-tab active" data-target="menuView" onclick="openSection('menuView', true)">
                 <span>📖</span> Digital Menu
             </button>
-            <button class="mode-tab" data-target="packagesView" onclick="switchView('packagesView')">
+            <button class="mode-tab" data-target="packagesView" onclick="openSection('packagesView', true)">
                 <span>🎉</span> Party Packages
             </button>
         </nav>
@@ -1480,7 +1453,7 @@
             <div class="category-scroll-bar" id="categoryChips"></div>
 
             <!-- Category Header -->
-            <div class="category-section-header">
+            <div class="category-section-header" id="currentCategoryHeader">
                 <div class="category-title" id="currentCategoryTitle">
                     <span>✨</span> All Dishes
                 </div>
@@ -1495,6 +1468,15 @@
 
         <!-- 6. Party Packages View -->
         <section class="packages-view" id="packagesView">
+            <div class="category-section-header" style="margin-bottom: 4px;">
+                <div class="category-title">
+                    <span>🎉</span> Banquet & Celebration Packages
+                </div>
+                <div class="category-count">
+                    100% Pure Veg
+                </div>
+            </div>
+
             <div class="package-card">
                 <div class="package-header">
                     <div class="package-name">Kitty Party Package</div>
@@ -1503,7 +1485,7 @@
                 <p class="package-desc">
                     Special banquet packages designed for kitty parties, birthday celebrations, and family daytime gatherings with delicious starters, fresh main course, and sweets.
                 </p>
-                <div style="margin-top: 8px; font-size: 11.5px; color: var(--gold-dark); font-weight: 700;">
+                <div style="margin-top: 8px; font-size: 12px; color: var(--gold-dark); font-weight: 800;">
                     ✨ Starters & Snacks • 🍛 Main Course • 🍨 Sweet Treat
                 </div>
             </div>
@@ -1516,10 +1498,14 @@
                 <p class="package-desc">
                     Lavish multi-course buffet dining experience with Paneer exclusives, tandoori starters, Dal Makhani, fresh tandoor breads, and pure desi ghee desserts.
                 </p>
-                <div style="margin-top: 8px; font-size: 11.5px; color: var(--gold-dark); font-weight: 700;">
+                <div style="margin-top: 8px; font-size: 12px; color: var(--gold-dark); font-weight: 800;">
                     👑 Royal Buffet • 🧀 Paneer Exclusives • 🫓 Tandoor Basket • 🍮 Pure Ghee Halwa
                 </div>
             </div>
+
+            <button class="back-to-menu-btn" onclick="openSection('menuView', true)">
+                <span>📖</span> Explore Full Digital Menu (170+ Dishes)
+            </button>
         </section>
 
         <!-- 7. RESTAURANT META & HOSPITALITY FOOTER -->
@@ -1650,14 +1636,9 @@
             if (cfg.logoImage) {
                 document.getElementById('uiLogo').src = cfg.logoImage;
             }
-            if (cfg.phoneNumber) {
-                var callCard = document.getElementById('uiCallCard');
-                if (callCard) callCard.href = `tel:${cfg.phoneNumber}`;
-                var phoneBtn = document.getElementById('uiPhoneBtn');
-                if (phoneBtn) phoneBtn.href = `tel:${cfg.phoneNumber}`;
-            }
             if (cfg.mapUrl) {
-                document.getElementById('uiMapCard').href = cfg.mapUrl;
+                var mapCard = document.getElementById('uiMapCard');
+                if (mapCard) mapCard.href = cfg.mapUrl;
             }
             if (cfg.address) {
                 document.getElementById('uiAddress').innerText = cfg.address;
@@ -1670,11 +1651,47 @@
             }
         }
 
-        function scrollToMenu() {
-            var menuEl = document.getElementById('menuSection');
-            if (menuEl) {
-                menuEl.scrollIntoView({ behavior: 'smooth' });
+        function openSection(targetId, shouldScroll) {
+            var menuEl = document.getElementById('menuView');
+            var pkgEl = document.getElementById('packagesView');
+            var visualRow = document.getElementById('visualCategoryRow');
+            var cardMenu = document.getElementById('cardExploreMenu');
+            var cardPkg = document.getElementById('cardPartyPackages');
+
+            if (menuEl) menuEl.style.display = targetId === 'menuView' ? 'block' : 'none';
+            if (pkgEl) pkgEl.style.display = targetId === 'packagesView' ? 'flex' : 'none';
+            if (visualRow) visualRow.style.display = targetId === 'menuView' ? 'flex' : 'none';
+
+            if (cardMenu) cardMenu.classList.toggle('active-card', targetId === 'menuView');
+            if (cardPkg) cardPkg.classList.toggle('active-card', targetId === 'packagesView');
+
+            var tabs = document.querySelectorAll('.mode-tab');
+            tabs.forEach(function(t) {
+                if (t.getAttribute('data-target') === targetId) {
+                    t.classList.add('active');
+                } else {
+                    t.classList.remove('active');
+                }
+            });
+
+            if (shouldScroll !== false) {
+                setTimeout(function() {
+                    var scrollTarget = targetId === 'packagesView'
+                        ? document.getElementById('packagesView')
+                        : document.getElementById('menuSection');
+                    if (scrollTarget) {
+                        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 40);
             }
+        }
+
+        function switchView(targetId) {
+            openSection(targetId, true);
+        }
+
+        function scrollToMenu() {
+            openSection('menuView', true);
         }
 
         function renderVisualCategoryTiles() {
@@ -1685,7 +1702,7 @@
             MENU_CATEGORIES.forEach(function(cat) {
                 var imgSrc = cat.image || 'assets/food_platter.jpg';
                 html += `
-                    <div class="visual-tile" onclick="selectCategory('${cat.id}')">
+                    <div class="visual-tile" onclick="selectCategory('${cat.id}', true)">
                         <div class="tile-img-box">
                             <img src="${imgSrc}" alt="${cat.name}">
                         </div>
@@ -1704,7 +1721,7 @@
             MENU_CATEGORIES.forEach(function(cat) {
                 var isActive = cat.id === currentCategory ? 'active' : '';
                 html += `
-                    <button class="category-chip ${isActive}" onclick="selectCategory('${cat.id}')">
+                    <button class="category-chip ${isActive}" onclick="selectCategory('${cat.id}', true)">
                         <span>${cat.icon}</span>
                         <span>${cat.name}</span>
                     </button>
@@ -1713,8 +1730,14 @@
             container.innerHTML = html;
         }
 
-        function selectCategory(catId) {
+        function selectCategory(catId, shouldScroll) {
+            openSection('menuView', false);
             currentCategory = catId;
+            if (searchQuery) {
+                document.getElementById('searchInput').value = '';
+                searchQuery = '';
+                document.getElementById('searchClearBtn').style.display = 'none';
+            }
             renderCategoryChips();
             renderDishes();
 
@@ -1723,9 +1746,13 @@
                 activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
             }
 
-            var dishesHeader = document.querySelector('.category-section-header');
-            if (dishesHeader) {
-                dishesHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (shouldScroll !== false) {
+                setTimeout(function() {
+                    var dishesHeader = document.getElementById('currentCategoryHeader');
+                    if (dishesHeader) {
+                        dishesHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 40);
             }
         }
 
@@ -1772,10 +1799,10 @@
 
             if (filtered.length === 0) {
                 listEl.innerHTML = `
-                    <div style="text-align: center; padding: 40px 16px; color: var(--text-muted);">
+                    <div style="text-align: center; padding: 40px 16px; color: #ffffff; background: rgba(6, 38, 43, 0.85); border-radius: 18px; border: 1px solid var(--card-border);">
                         <div style="font-size: 32px; margin-bottom: 8px;">🍽️</div>
-                        <div style="font-weight: 700; font-size: 15px;">No dishes found matching "${searchQuery}"</div>
-                        <div style="font-size: 12px; margin-top: 4px;">Try searching another keyword or select a category</div>
+                        <div style="font-weight: 700; font-size: 15px; color: var(--gold-light);">No dishes found matching "${searchQuery}"</div>
+                        <div style="font-size: 12px; margin-top: 4px; color: #d5e6e8;">Try searching another keyword or select a category</div>
                     </div>
                 `;
                 return;
@@ -1988,24 +2015,6 @@
             var encoded = encodeURIComponent(text);
             var waUrl = `https://wa.me/91${phone.replace(/\D/g, '')}?text=${encoded}`;
             window.open(waUrl, '_blank');
-        }
-
-        function switchView(targetId) {
-            var menuEl = document.getElementById('menuView');
-            var pkgEl = document.getElementById('packagesView');
-            if (menuEl) menuEl.style.display = targetId === 'menuView' ? 'block' : 'none';
-            if (pkgEl) pkgEl.style.display = targetId === 'packagesView' ? 'flex' : 'none';
-
-            var tabs = document.querySelectorAll('.mode-tab');
-            tabs.forEach(function(t) {
-                if (t.getAttribute('data-target') === targetId) {
-                    t.classList.add('active');
-                } else {
-                    t.classList.remove('active');
-                }
-            });
-
-            window.scrollTo({ top: 380, behavior: 'smooth' });
         }
     </script>
 </body>

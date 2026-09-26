@@ -17,15 +17,15 @@
         }
 
         :root {
-            --bg-parchment: #faf4e8;
-            --bg-parchment-mid: #f3e6cd;
-            --bg-parchment-dark: #e8d3b0;
+            --peacock-teal-deep: #04181c;
+            --peacock-teal-mid: #083036;
+            --peacock-teal-bright: #0f4e55;
             --royal-maroon: #730018;
-            --royal-maroon-dark: #4d0010;
-            --gold-primary: #c59b27;
-            --gold-light: #fef4cf;
-            --gold-border: rgba(197, 155, 39, 0.45);
-            --gold-border-strong: rgba(197, 155, 39, 0.9);
+            --gold-primary: #d4af37;
+            --gold-light: #fbe69b;
+            --gold-border: rgba(212, 175, 55, 0.45);
+            --gold-border-strong: rgba(212, 175, 55, 0.92);
+            --ivory-panel: rgba(255, 252, 244, 0.97);
             --veg-green: #1b7a3a;
         }
 
@@ -37,7 +37,7 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #ede6d8;
+            background: radial-gradient(circle at 50% 20%, #0d3f46 0%, #051e23 70%, #021013 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -48,17 +48,18 @@
 
         .controls-bar {
             width: 100%;
-            max-width: 520px;
-            margin-bottom: 20px;
+            max-width: 540px;
+            margin-bottom: 22px;
             display: flex;
             flex-direction: column;
             gap: 12px;
             align-items: center;
-            background: #ffffff;
+            background: rgba(8, 48, 54, 0.92);
+            backdrop-filter: blur(12px);
             padding: 16px;
             border-radius: 20px;
             border: 1.5px solid var(--gold-border-strong);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
         }
 
         .btn-row {
@@ -69,9 +70,9 @@
         }
 
         .toggle-btn {
-            background: #ffffff;
-            border: 1.5px solid var(--royal-maroon);
-            color: var(--royal-maroon);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid var(--gold-primary);
+            color: var(--gold-light);
             padding: 7px 16px;
             border-radius: 20px;
             font-size: 13px;
@@ -80,20 +81,21 @@
             transition: all 0.2s ease;
         }
         .toggle-btn.active, .toggle-btn:hover {
-            background: var(--royal-maroon);
-            color: #ffffff;
+            background: linear-gradient(135deg, #d4af37 0%, #9a7414 100%);
+            color: #04181c;
+            border-color: #fbe69b;
         }
 
         .print-btn {
-            background: linear-gradient(135deg, #c59b27 0%, #8c6b12 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #fbe69b 0%, #d4af37 50%, #9a7414 100%);
+            color: #04181c;
             border: 2px solid #ffffff;
             padding: 11px 26px;
             font-size: 15px;
             font-weight: 800;
             border-radius: 24px;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -101,29 +103,32 @@
 
         .standee-wrapper {
             display: flex;
-            gap: 24px;
+            gap: 28px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Standee Card Base - Royal Parchment Canvas */
+        /* Standee Card Base - Peacock Teal Velvet & Warm Golden Cove Interior Theme */
         .standee-card {
-            width: 440px;
-            height: 700px;
-            background-color: #faf3e6;
+            width: 450px;
+            height: 690px;
+            background-color: #06252a;
             background-image: 
-                radial-gradient(circle at 50% 28%, #fffef8 0%, #faedd5 45%, #f0dcb8 80%, #e5cb9e 100%),
-                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c59b27' fill-opacity='0.035'%3E%3Cpath d='M20 20L10 30H0l10-10L0 10h10l10 10zm0-20L10 10H0L10 0h10zm0 40L10 30H0l10 10h10zm20-20L30 30H20l10-10L20 10h10l10 10zm0-20L30 10H20L30 0h10zm0 40L30 30H20l10 10h10z'/%3E%3C/g%3E%3C/svg%3E");
+                radial-gradient(circle at 50% 14%, rgba(212, 175, 55, 0.28) 0%, transparent 48%),
+                linear-gradient(180deg, rgba(8, 48, 54, 0.72) 0%, rgba(6, 36, 41, 0.78) 50%, rgba(4, 22, 26, 0.88) 100%),
+                url("assets/interior_hero.jpg");
+            background-size: cover;
+            background-position: center;
             border: 4px solid var(--gold-primary);
             border-radius: 24px;
-            padding: 22px 18px 18px;
+            padding: 22px 20px 18px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             position: relative;
-            box-shadow: 0 20px 50px rgba(90, 10, 24, 0.25);
-            color: #33261d;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 28px rgba(212, 175, 55, 0.22);
+            color: #ffffff;
             text-align: center;
             page-break-inside: avoid;
             overflow: hidden;
@@ -135,7 +140,7 @@
             left: 9px;
             right: 9px;
             bottom: 9px;
-            border: 1.2px solid rgba(197, 155, 39, 0.6);
+            border: 1.4px solid rgba(251, 230, 155, 0.65);
             border-radius: 18px;
             pointer-events: none;
         }
@@ -145,24 +150,24 @@
             left: 13px;
             right: 13px;
             bottom: 13px;
-            border: 1px dashed rgba(197, 155, 39, 0.35);
+            border: 1px dashed rgba(212, 175, 55, 0.4);
             border-radius: 14px;
             pointer-events: none;
         }
 
-        .diamond-tl { position: absolute; top: 8px; left: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
-        .diamond-tr { position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
-        .diamond-bl { position: absolute; bottom: 8px; left: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
-        .diamond-br { position: absolute; bottom: 8px; right: 8px; width: 8px; height: 8px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-tl { position: absolute; top: 8px; left: 8px; width: 9px; height: 9px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-tr { position: absolute; top: 8px; right: 8px; width: 9px; height: 9px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-bl { position: absolute; bottom: 8px; left: 8px; width: 9px; height: 9px; background: var(--gold-primary); transform: rotate(45deg); }
+        .diamond-br { position: absolute; bottom: 8px; right: 8px; width: 9px; height: 9px; background: var(--gold-primary); transform: rotate(45deg); }
 
         /* Header */
         .logo-rim {
-            width: 90px;
-            height: 90px;
+            width: 86px;
+            height: 86px;
             border-radius: 50%;
-            padding: 2.5px;
-            background: linear-gradient(135deg, #fdf3cb 0%, #c59b27 50%, #8c6b12 100%);
-            box-shadow: 0 6px 16px rgba(115, 0, 24, 0.18);
+            padding: 3px;
+            background: linear-gradient(135deg, #fbe69b 0%, #d4af37 50%, #8c6b12 100%);
+            box-shadow: 0 0 22px rgba(212, 175, 55, 0.45), 0 6px 16px rgba(0, 0, 0, 0.4);
             margin-bottom: 4px;
         }
         .logo-rim img {
@@ -171,13 +176,15 @@
             border-radius: 50%;
             object-fit: cover;
             display: block;
+            background: #ffffff;
         }
 
         .brand-title-hindi {
             font-family: 'Rozha One', 'Yatra One', serif;
-            font-size: 36px;
+            font-size: 35px;
             line-height: 1.1;
-            color: var(--royal-maroon);
+            color: var(--gold-light);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
             margin-bottom: 1px;
             display: flex;
             align-items: center;
@@ -187,62 +194,76 @@
 
         .brand-subtitle {
             font-family: 'Cinzel', serif;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 800;
             letter-spacing: 3px;
-            color: var(--royal-maroon-dark);
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         .veg-pure-tag {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #eaf7ed;
-            border: 1px solid rgba(27, 122, 58, 0.4);
-            color: var(--veg-green);
-            padding: 3px 12px;
+            background: rgba(12, 85, 50, 0.9);
+            border: 1.2px solid var(--gold-primary);
+            color: #ffffff;
+            padding: 3.5px 14px;
             border-radius: 20px;
             font-size: 9.5px;
             font-weight: 800;
             letter-spacing: 0.8px;
-            margin-top: 4px;
+            margin-top: 5px;
             text-transform: uppercase;
         }
 
         .gold-line {
-            width: 70%;
+            width: 75%;
             height: 1.5px;
             background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
             margin: 6px 0;
         }
 
-        /* Front Standee Body */
+        /* Front Standee Body - Warm Ivory & Gold Arch Panel */
+        .ivory-qr-panel {
+            background: var(--ivory-panel);
+            border: 2.5px solid var(--gold-primary);
+            border-radius: 22px;
+            padding: 12px 16px 14px;
+            width: 88%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+            margin-bottom: 8px;
+        }
+
         .action-heading {
-            font-size: 17px;
+            font-family: 'Cinzel', serif;
+            font-size: 16.5px;
             font-weight: 800;
-            color: var(--royal-maroon-dark);
-            letter-spacing: 0.5px;
+            color: #083036;
+            letter-spacing: 0.6px;
             margin-bottom: 2px;
         }
         .action-subheading {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 700;
-            color: var(--gold-dark);
+            color: #8c6b12;
             margin-bottom: 8px;
         }
 
         .qr-frame-box {
             background: #ffffff;
-            border: 3px solid var(--gold-primary);
-            border-radius: 18px;
-            padding: 10px;
-            box-shadow: 0 8px 20px rgba(90, 10, 24, 0.15);
+            border: 2.5px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 6px 16px rgba(8, 48, 54, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 230px;
-            height: 230px;
-            margin-bottom: 8px;
+            width: 215px;
+            height: 215px;
         }
         .qr-frame-box img {
             width: 100%;
@@ -251,104 +272,91 @@
             border-radius: 6px;
         }
 
-        .table-pill {
-            background: #ffffff;
-            border: 1.5px solid var(--royal-maroon);
-            border-radius: 20px;
-            padding: 4px 18px;
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--royal-maroon);
-            margin-bottom: 6px;
+        .purity-pledge-box {
+            background: rgba(6, 38, 43, 0.9);
+            border: 1.5px solid var(--gold-primary);
+            border-radius: 14px;
+            padding: 7px 14px;
+            width: 92%;
         }
 
         .purity-badge {
-            font-size: 10px;
-            color: #553408;
+            font-size: 10.5px;
+            color: var(--gold-light);
             font-weight: 700;
             line-height: 1.35;
-            max-width: 340px;
+        }
+        .purity-sub {
+            font-size: 9.5px;
+            color: #e2f1f1;
+            font-weight: 600;
+            margin-top: 2px;
         }
 
         /* Back Standee Specific Elements */
         .back-slogan-wrap {
-            padding: 6px 8px;
+            padding: 2px 8px;
             margin-bottom: 6px;
-        }
-        .slogan-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 12.5px;
-            color: #5a3810;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 4px;
         }
         .slogan-hi-bold {
             font-family: 'Rozha One', serif;
-            font-size: 17px;
-            color: var(--royal-maroon);
+            font-size: 18px;
+            color: var(--gold-light);
             margin-bottom: 2px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+        .slogan-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 11.5px;
+            color: #eaf4f4;
+            font-weight: 600;
+            line-height: 1.35;
         }
 
         .packages-card-back {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1.5px solid var(--gold-primary);
-            border-radius: 14px;
-            padding: 10px;
-            width: 100%;
+            background: var(--ivory-panel);
+            border: 2.5px solid var(--gold-primary);
+            border-radius: 18px;
+            padding: 12px;
+            width: 94%;
             margin-bottom: 10px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            color: #1f2d2f;
         }
         .pkg-head-back {
             font-family: 'Cinzel', serif;
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 800;
-            color: var(--royal-maroon);
-            margin-bottom: 6px;
+            color: #083036;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
         .pkg-row-back {
             display: flex;
             justify-content: space-around;
-            gap: 8px;
+            gap: 10px;
         }
         .pkg-item-back {
             flex: 1;
             background: #ffffff;
-            border: 1px solid var(--gold-border);
-            border-radius: 10px;
-            padding: 6px;
+            border: 1.2px solid var(--gold-border);
+            border-radius: 12px;
+            padding: 8px 6px;
         }
         .pkg-item-name {
-            font-size: 11px;
-            font-weight: 800;
-            color: #333;
-        }
-        .pkg-item-price {
             font-size: 11.5px;
             font-weight: 800;
-            color: #8c6b12;
+            color: #083036;
+        }
+        .pkg-item-price {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--royal-maroon);
+            margin-top: 2px;
         }
 
-        .ambience-strip-back {
-            display: flex;
-            gap: 6px;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        .amb-thumb-box {
-            flex: 1;
-            height: 75px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--gold-primary);
-        }
-        .amb-thumb-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Standee Footer (Call / Address) */
+        /* Standee Footer (Address & Greeting - No Call Button) */
         .standee-footer {
             width: 100%;
             display: flex;
@@ -361,21 +369,21 @@
 
         .footer-address {
             font-size: 10px;
-            color: #5a4030;
+            color: #eef7f7;
             line-height: 1.35;
+            font-weight: 600;
         }
-        .footer-phone {
-            font-size: 12.5px;
-            font-weight: 800;
-            color: var(--royal-maroon);
-            margin-top: 1px;
+        .footer-hwy {
+            font-size: 9.5px;
+            color: var(--gold-primary);
+            font-weight: 700;
         }
         .footer-quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
-            color: var(--royal-maroon);
+            color: var(--gold-light);
             margin-top: 3px;
         }
 
@@ -405,7 +413,7 @@
 
     <div class="controls-bar">
         <button class="print-btn" onclick="window.print()">
-            <span>🖨️</span> Print Standee (Ctrl + P)
+            <span>🖨️</span> Print Luxury Standee (Ctrl + P)
         </button>
 
         <div class="btn-row">
@@ -418,14 +426,14 @@
     <div class="standee-wrapper">
         
         <!-- ===============================================================
-             FRONT STANDÉE (QR CODE + 170+ DIGITAL MENU)
+             FRONT STANDÉE (QR CODE + 170+ DIGITAL MENU - NO TABLE NO)
              =============================================================== -->
         <div class="standee-card" id="frontStandee">
             <div class="inner-border"></div>
             <div class="inner-border-fine"></div>
             <div class="diamond-tl"></div><div class="diamond-tr"></div><div class="diamond-bl"></div><div class="diamond-br"></div>
 
-            <header style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <header style="width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;">
                 <div class="logo-rim">
                     <img src="logo_with_gold_rim.png" alt="श्री कृपा Logo">
                 </div>
@@ -436,25 +444,34 @@
                 <div class="veg-pure-tag">
                     <span>🌿</span> 100% PURE VEG • PURE DESI GHEE <span>🌿</span>
                 </div>
-                <div class="gold-line"></div>
             </header>
 
-            <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-                <h2 class="action-heading">SCAN FOR DIGITAL MENU</h2>
-                <div class="action-subheading">📖 Explore 170+ Dishes • Pure Desi Ghee</div>
+            <main style="width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;">
+                <div class="ivory-qr-panel">
+                    <h2 class="action-heading">SCAN FOR DIGITAL MENU</h2>
+                    <div class="action-subheading">Explore 170+ Dishes • Party Packages • Instant Menu</div>
 
-                <div class="qr-frame-box" style="margin-top: 6px; margin-bottom: 14px;">
-                    <img src="qr_code.png" alt="Scan Digital Menu QR">
+                    <div class="qr-frame-box">
+                        <img src="qr_code.png" alt="Scan Digital Menu QR">
+                    </div>
                 </div>
 
-                <p class="purity-badge">
-                    Pure Desi Ghee, Amul Butter & Pure Paneer Used in Cooking • 20 Min Fresh Preparation
-                </p>
+                <div class="purity-pledge-box">
+                    <div class="purity-badge">
+                        Pure Desi Ghee, Amul Butter & Pure Paneer Used In Cooking
+                    </div>
+                    <div class="purity-sub">
+                        Please Allow Us 20 Min Time For Fresh Order Preparation
+                    </div>
+                </div>
             </main>
 
             <footer class="standee-footer">
                 <p class="footer-address">
-                    Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Indore (Agra - Mumbai Hwy)
+                    Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Indore
+                </p>
+                <p class="footer-hwy">
+                    Agra - Mumbai Highway • Near Highway Toll Plaza
                 </p>
                 <p class="footer-quote">
                     एक बार खाइए, बार-बार आइए 🙏
@@ -470,7 +487,7 @@
             <div class="inner-border-fine"></div>
             <div class="diamond-tl"></div><div class="diamond-tr"></div><div class="diamond-bl"></div><div class="diamond-br"></div>
 
-            <header style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <header style="width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;">
                 <div class="logo-rim">
                     <img src="logo_with_gold_rim.png" alt="श्री कृपा Logo">
                 </div>
@@ -484,7 +501,7 @@
                 <div class="gold-line"></div>
             </header>
 
-            <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <main style="width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;">
                 <div class="back-slogan-wrap">
                     <div class="slogan-hi-bold">एक बार खाइए, बार-बार आइए</div>
                     <div class="slogan-title">"You Can Enjoy Delicious Food Serving Happiness, One Plate At A Time"</div>
@@ -495,29 +512,28 @@
                     <div class="pkg-head-back">BANQUET & PARTY PACKAGES</div>
                     <div class="pkg-row-back">
                         <div class="pkg-item-back">
-                            <div class="pkg-item-name">Kitty Party</div>
+                            <div class="pkg-item-name">Kitty Party Package</div>
                             <div class="pkg-item-price">Started @ ₹299</div>
-                            <div style="font-size: 9.5px; color: #666; margin-top: 3px;">Starters, Main Course & Dessert</div>
+                            <div style="font-size: 9.5px; color: #555; margin-top: 3px; font-weight: 600;">Starters • Main Course • Sweet</div>
                         </div>
                         <div class="pkg-item-back">
-                            <div class="pkg-item-name">Dinner Party</div>
+                            <div class="pkg-item-name">Lunch & Dinner Party</div>
                             <div class="pkg-item-price">Started @ ₹549</div>
-                            <div style="font-size: 9.5px; color: #666; margin-top: 3px;">Grand Multi-Course Buffet Feast</div>
+                            <div style="font-size: 9.5px; color: #555; margin-top: 3px; font-weight: 600;">Lavish Multi-Course Buffet Feast</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 100% Pure Desi Ghee Purity Promise Card -->
-                <div class="packages-card-back" style="border-color: rgba(115, 0, 24, 0.4); background: rgba(255, 255, 255, 0.85); margin-top: 6px;">
-                    <div class="pkg-head-back" style="font-size: 11.5px; margin-bottom: 4px;">🌿 100% PURE VEG PURITY PROMISE 🌿</div>
-                    <p style="font-size: 10.5px; color: #4a2810; line-height: 1.45; font-weight: 600;">
-                        Pure Desi Ghee, Refined Oil, Amul Butter, Cheese, Milk, Curd, Paneer (Pure) Are Used In Cooking.
+                <div class="packages-card-back" style="margin-bottom: 4px;">
+                    <div class="pkg-head-back" style="font-size: 12px; margin-bottom: 4px;">🌿 100% PURE VEG & PURE DESI GHEE PROMISE 🌿</div>
+                    <p style="font-size: 10.5px; color: #3a2a18; line-height: 1.45; font-weight: 700;">
+                        Pure Desi Ghee, Refined Oil, Amul Butter, Cheese, Milk, Curd, Paneer (Pure) Are Exclusively Used In All Cooking.
+                    </p>
+                    <p style="font-size: 10.5px; color: var(--veg-green); font-weight: 800; margin-top: 5px;">
+                        श्री कृपा रेस्टोरेंट में स्वाद, सेवा और विश्वास एक साथ पाइए।
                     </p>
                 </div>
-
-                <p class="purity-badge" style="margin-top: 8px;">
-                    श्री कृपा रेस्टोरेंट में स्वाद, सेवा और विश्वास एक साथ पाइए।
-                </p>
             </main>
 
             <footer class="standee-footer">
