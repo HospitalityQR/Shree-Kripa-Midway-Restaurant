@@ -237,32 +237,21 @@
 
         .brand-title-wrap {
             position: relative;
-            display: inline-block;
-            margin-bottom: 2px;
-        }
-
-        .brand-title-hindi {
-            font-family: var(--font-hindi);
-            font-size: 42px;
-            line-height: 1.1;
-            font-weight: 800;
-            color: var(--gold-light);
-            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.65);
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
+            display: flex;
             justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: -22px;
+            margin-bottom: 2px;
+            z-index: 3;
         }
 
-        .peacock-feather {
-            font-size: 26px;
-            margin-left: 6px;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-            animation: gentleSway 3s ease-in-out infinite alternate;
-        }
-        @keyframes gentleSway {
-            0% { transform: rotate(-4deg); }
-            100% { transform: rotate(4deg); }
+        .brand-title-img {
+            width: 245px;
+            max-width: 84%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.6));
         }
 
         .brand-subtitle {
@@ -1365,10 +1354,7 @@
             </div>
 
             <div class="brand-title-wrap">
-                <h1 class="brand-title-hindi" id="uiTitle">
-                    श्री कृपा
-                    <span class="peacock-feather" title="Krishna Mor Pankh">🪶</span>
-                </h1>
+                <img src="assets/shree_kripa_title.png" alt="श्री कृपा" class="brand-title-img" id="uiTitleImg">
             </div>
 
             <div class="brand-subtitle" id="uiSubname">MIDWAY RESTAURANT</div>
@@ -1643,7 +1629,6 @@
 
             if (cfg.restaurantName) {
                 document.getElementById('pageTitle').innerText = `${cfg.restaurantName} Midway Restaurant | 100% Pure Veg • Rau, Indore`;
-                document.getElementById('uiTitle').innerHTML = `${cfg.restaurantName} <span class="peacock-feather" title="Krishna Mor Pankh">🪶</span>`;
             }
             if (cfg.restaurantSubname) {
                 document.getElementById('uiSubname').innerText = cfg.restaurantSubname;

@@ -157,6 +157,7 @@ def draw_rounded_card(draw, box, fill, outline, width=3, radius=28):
 def build_front_standee(config, output_filenames=["table_standee_printable.png", "standee_front_printable.png"]):
     """
     Generate 300 DPI Front Standee (Peacock Teal & Warm Golden Cove Interior Theme)
+    Uses official stylized Hindi 'श्री कृपा' calligraphy with Bansuri & Mor Pankh.
     No Table No, No Call Button.
     """
     w, h = 1200, 1800
@@ -165,16 +166,15 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
     draw_luxury_borders_and_arches(draw, w, h)
 
     # Subtle top golden sun disc halo behind logo (inspired by the restaurant's yellow sun murals)
-    draw.ellipse([w // 2 - 118, 58, w // 2 + 118, 294], fill=(232, 185, 49, 55), outline=(245, 218, 137, 180), width=2)
+    draw.ellipse([w // 2 - 110, 48, w // 2 + 110, 268], fill=(232, 185, 49, 55), outline=(245, 218, 137, 180), width=2)
 
     # 1. Official Logo with Gold Rim
     logo_path = "logo_with_gold_rim.png"
     if os.path.exists(logo_path):
         logo = Image.open(logo_path).convert("RGBA")
-        logo = logo.resize((210, 210), Image.Resampling.LANCZOS)
-        canvas.paste(logo, (int((w - 210) / 2), 70), mask=logo)
+        logo = logo.resize((196, 196), Image.Resampling.LANCZOS)
+        canvas.paste(logo, (int((w - 196) / 2), 60), mask=logo)
 
-    font_brand = get_font(54, bold=True)
     font_title = get_font(36, bold=True)
     font_veg = get_font(22, bold=True)
     font_cta = get_font(38, bold=True)
@@ -183,30 +183,33 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
     font_slogan = get_font(28, bold=True, italic=True)
     font_thanks = get_font(25, bold=True)
 
-    # Brand Title: SHREE KRIPA (Warm Luminous Gold)
-    brand_text = "SHREE KRIPA"
-    bbox = draw.textbbox((0, 0), brand_text, font=font_brand)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2 + 2, 297), brand_text, fill=(0, 0, 0, 140), font=font_brand)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 295), brand_text, fill=(251, 230, 155), font=font_brand)
+    # 2. Official Stylized Hindi Brand Title: श्री कृपा + Bansuri + Mor Pankh
+    title_img_path = "assets/shree_kripa_title.png"
+    if os.path.exists(title_img_path):
+        t_img = Image.open(title_img_path).convert("RGBA")
+        tw = 580
+        th = int(t_img.size[1] * (tw / t_img.size[0]))
+        t_img = t_img.resize((tw, th), Image.Resampling.LANCZOS)
+        canvas.paste(t_img, (int((w - tw) / 2), 202), mask=t_img)
 
     # Subtitle: MIDWAY RESTAURANT
     title_text = "MIDWAY RESTAURANT"
     bbox = draw.textbbox((0, 0), title_text, font=font_title)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 362), title_text, fill=(255, 252, 245), font=font_title)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 438), title_text, fill=(255, 252, 245), font=font_title)
 
     # 100% Pure Veg Pill Badge
     pill_w, pill_h = 520, 44
     pill_x = (w - pill_w) // 2
-    pill_y = 418
+    pill_y = 492
     draw_rounded_card(draw, [pill_x, pill_y, pill_x + pill_w, pill_y + pill_h], fill=(12, 85, 50, 230), outline=(212, 175, 55), width=2, radius=22)
     veg_text = "100% PURE VEG  •  PURE DESI GHEE"
     bbox = draw.textbbox((0, 0), veg_text, font=font_veg)
     draw.text(((w - (bbox[2] - bbox[0])) / 2, pill_y + 9), veg_text, fill=(255, 255, 255), font=font_veg)
 
     # Center Luxury Cream & Gold Arch Panel for QR Code
-    panel_w, panel_h = 820, 760
+    panel_w, panel_h = 820, 730
     panel_x = (w - panel_w) // 2
-    panel_y = 490
+    panel_y = 556
     draw_rounded_card(
         draw,
         [panel_x, panel_y, panel_x + panel_w, panel_y + panel_h],
@@ -227,30 +230,30 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
     # Call to action inside panel: SCAN FOR DIGITAL MENU
     cta_text = "SCAN FOR DIGITAL MENU"
     bbox = draw.textbbox((0, 0), cta_text, font=font_cta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, panel_y + 28), cta_text, fill=(9, 62, 68), font=font_cta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, panel_y + 24), cta_text, fill=(9, 62, 68), font=font_cta)
 
     sub_cta = "Explore 170+ Dishes  •  Party Packages  •  Instant Menu"
     bbox = draw.textbbox((0, 0), sub_cta, font=font_meta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, panel_y + 82), sub_cta, fill=(140, 100, 20), font=font_meta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, panel_y + 76), sub_cta, fill=(140, 100, 20), font=font_meta)
 
     # QR Code Box
     qr_url = config.get("landingPageUrl", "https://hospitalityqr.github.io/Shree-Kripa-Midway-Restaurant/")
     qr_img = generate_styled_qr(qr_url, box_size=15, border=2, fill_color=(7, 46, 52))
-    qr_size = 540
+    qr_size = 520
     qr_img = qr_img.resize((qr_size, qr_size), Image.Resampling.LANCZOS)
 
     box_x = int((w - qr_size - 36) / 2)
-    box_y = panel_y + 130
+    box_y = panel_y + 122
     draw_rounded_card(draw, [box_x, box_y, box_x + qr_size + 36, box_y + qr_size + 36], fill=(255, 255, 255), outline=(212, 175, 55), width=3, radius=18)
     canvas.paste(qr_img, (box_x + 18, box_y + 18))
 
     # Purity Guarantee Card below QR Panel (NO TABLE NO)
-    pledge_y = panel_y + panel_h + 30
+    pledge_y = panel_y + panel_h + 24
     pledge_w = 980
     pledge_x = (w - pledge_w) // 2
     draw_rounded_card(
         draw,
-        [pledge_x, pledge_y, pledge_x + pledge_w, pledge_y + 115],
+        [pledge_x, pledge_y, pledge_x + pledge_w, pledge_y + 110],
         fill=(6, 38, 43, 225),
         outline=(212, 175, 55),
         width=2,
@@ -259,14 +262,14 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
 
     pledge_text = "Pure Desi Ghee, Amul Butter & Pure Paneer Used In Cooking"
     bbox = draw.textbbox((0, 0), pledge_text, font=font_sub)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, pledge_y + 20), pledge_text, fill=(251, 230, 155), font=font_sub)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, pledge_y + 18), pledge_text, fill=(251, 230, 155), font=font_sub)
 
     prep_text = "Please Allow Us 20 Min Time For Fresh Order Preparation"
     bbox = draw.textbbox((0, 0), prep_text, font=font_meta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, pledge_y + 64), prep_text, fill=(235, 245, 245), font=font_meta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, pledge_y + 62), prep_text, fill=(235, 245, 245), font=font_meta)
 
     # Address & Highway Location (NO CALL BUTTON)
-    footer_y = pledge_y + 145
+    footer_y = pledge_y + 132
     addr_1 = "Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Indore"
     addr_2 = "Agra - Mumbai Highway  •  Near Highway Toll Plaza"
 
@@ -274,16 +277,16 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
     draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y), addr_1, fill=(255, 252, 245), font=font_meta)
 
     bbox = draw.textbbox((0, 0), addr_2, font=font_meta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 34), addr_2, fill=(212, 175, 55), font=font_meta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 32), addr_2, fill=(212, 175, 55), font=font_meta)
 
     # Devotional Slogan & Hospitality Closing
     slogan_text = "\"Ek Baar Khaiye, Baar-Baar Aaiye\""
     bbox = draw.textbbox((0, 0), slogan_text, font=font_slogan)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 82), slogan_text, fill=(251, 230, 155), font=font_slogan)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 74), slogan_text, fill=(251, 230, 155), font=font_slogan)
 
     thanks_str = "Thank You For Visiting Shree Kripa Midway Restaurant"
     bbox = draw.textbbox((0, 0), thanks_str, font=font_thanks)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 130), thanks_str, fill=(255, 255, 255), font=font_thanks)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, footer_y + 118), thanks_str, fill=(255, 255, 255), font=font_thanks)
 
     for fn in output_filenames:
         canvas.save(fn, quality=95, dpi=(300, 300))
@@ -292,6 +295,7 @@ def build_front_standee(config, output_filenames=["table_standee_printable.png",
 def build_back_standee(config, output_filename="standee_back_printable.png"):
     """
     Generate 300 DPI Back Standee (Peacock Teal & Golden Cove Interior Theme)
+    Uses official stylized Hindi 'श्री कृपा' calligraphy with Bansuri & Mor Pankh.
     Party Packages, Purity Promise, Slogans, Location.
     """
     w, h = 1200, 1800
@@ -300,18 +304,17 @@ def build_back_standee(config, output_filename="standee_back_printable.png"):
     draw_luxury_borders_and_arches(draw, w, h)
 
     # Top golden sun disc halo behind logo
-    draw.ellipse([w // 2 - 112, 58, w // 2 + 112, 282], fill=(232, 185, 49, 55), outline=(245, 218, 137, 180), width=2)
+    draw.ellipse([w // 2 - 108, 48, w // 2 + 108, 264], fill=(232, 185, 49, 55), outline=(245, 218, 137, 180), width=2)
 
     # 1. Logo
     logo_path = "logo_with_gold_rim.png"
     if os.path.exists(logo_path):
-        logo = Image.open(logo_path).convert("RGBA").resize((200, 200), Image.Resampling.LANCZOS)
-        canvas.paste(logo, (int((w - 200) / 2), 70), mask=logo)
+        logo = Image.open(logo_path).convert("RGBA").resize((192, 192), Image.Resampling.LANCZOS)
+        canvas.paste(logo, (int((w - 192) / 2), 60), mask=logo)
 
-    font_brand = get_font(52, bold=True)
-    font_title = get_font(36, bold=True)
-    font_slogan = get_font(32, bold=True, italic=True)
-    font_sub = get_font(23, bold=False)
+    font_title = get_font(35, bold=True)
+    font_slogan = get_font(30, bold=True, italic=True)
+    font_sub = get_font(22, bold=False)
     font_pkg_title = get_font(30, bold=True)
     font_pkg_name = get_font(27, bold=True)
     font_pkg_price = get_font(26, bold=True)
@@ -319,31 +322,34 @@ def build_back_standee(config, output_filename="standee_back_printable.png"):
     font_trust = get_font(25, bold=True)
     font_thanks = get_font(25, bold=True)
 
-    # Brand Title: SHREE KRIPA
-    brand_text = "SHREE KRIPA"
-    bbox = draw.textbbox((0, 0), brand_text, font=font_brand)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2 + 2, 287), brand_text, fill=(0, 0, 0, 140), font=font_brand)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 285), brand_text, fill=(251, 230, 155), font=font_brand)
+    # 2. Official Stylized Hindi Brand Title: श्री कृपा + Bansuri + Mor Pankh
+    title_img_path = "assets/shree_kripa_title.png"
+    if os.path.exists(title_img_path):
+        t_img = Image.open(title_img_path).convert("RGBA")
+        tw = 560
+        th = int(t_img.size[1] * (tw / t_img.size[0]))
+        t_img = t_img.resize((tw, th), Image.Resampling.LANCZOS)
+        canvas.paste(t_img, (int((w - tw) / 2), 198), mask=t_img)
 
     title_text = "MIDWAY RESTAURANT"
     bbox = draw.textbbox((0, 0), title_text, font=font_title)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 350), title_text, fill=(255, 252, 245), font=font_title)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 426), title_text, fill=(255, 252, 245), font=font_title)
 
     # Signature Slogans
     slogan_hi = "\"Ek Baar Khaiye, Baar-Baar Aaiye\""
     bbox = draw.textbbox((0, 0), slogan_hi, font=font_slogan)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 412), slogan_hi, fill=(251, 230, 155), font=font_slogan)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 480), slogan_hi, fill=(251, 230, 155), font=font_slogan)
 
     slogan_en = "You Can Enjoy Delicious Food Serving Happiness, One Plate At A Time"
     bbox = draw.textbbox((0, 0), slogan_en, font=font_sub)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 465), slogan_en, fill=(235, 245, 245), font=font_sub)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 526), slogan_en, fill=(235, 245, 245), font=font_sub)
 
-    draw.line([140, 515, w - 140, 515], fill=(212, 175, 55), width=2)
+    draw.line([140, 568, w - 140, 568], fill=(212, 175, 55), width=2)
 
-    # 2. Grand Party Packages Card (Warm Ivory & Gold Arch Panel)
-    card_y = 550
+    # 3. Grand Party Packages Card (Warm Ivory & Gold Arch Panel)
+    card_y = 595
     card_w = 1020
-    card_h = 340
+    card_h = 330
     card_x = (w - card_w) // 2
 
     draw_rounded_card(draw, [card_x, card_y, card_x + card_w, card_y + card_h], fill=(255, 252, 244, 248), outline=(212, 175, 55), width=4, radius=28)
@@ -393,7 +399,7 @@ def build_back_standee(config, output_filename="standee_back_printable.png"):
     draw.text((card_x + col_w + (col_w - (bbox[2] - bbox[0])) / 2, card_y + 240), p2_d2, fill=(140, 100, 20), font=font_meta)
 
     # 3. 100% Pure Desi Ghee Purity Promise Card
-    pledge_y = 935
+    pledge_y = 960
     pledge_h = 260
     draw_rounded_card(draw, [card_x, pledge_y, card_x + card_w, pledge_y + pledge_h], fill=(255, 252, 244, 248), outline=(212, 175, 55), width=4, radius=28)
 
@@ -414,20 +420,20 @@ def build_back_standee(config, output_filename="standee_back_printable.png"):
     draw.text((card_x + (card_w - (bbox[2] - bbox[0])) / 2, pledge_y + 188), p_trust, fill=(27, 122, 58), font=font_trust)
 
     # 4. Location & Hospitality Footer
-    draw.line([140, 1245, w - 140, 1245], fill=(212, 175, 55), width=2)
+    draw.line([140, 1265, w - 140, 1265], fill=(212, 175, 55), width=2)
 
     addr_1 = "Near Maharana Pratap Bridge, Pigdamber, Rau, NH 3, Near Highway Toll Plaza"
     addr_2 = "Agra - Mumbai Highway, Indore, (M.P.) 453331"
 
     bbox = draw.textbbox((0, 0), addr_1, font=font_meta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1290), addr_1, fill=(255, 252, 245), font=font_meta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1308), addr_1, fill=(255, 252, 245), font=font_meta)
 
     bbox = draw.textbbox((0, 0), addr_2, font=font_meta)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1335), addr_2, fill=(212, 175, 55), font=font_meta)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1352), addr_2, fill=(212, 175, 55), font=font_meta)
 
     thanks_str = "Thank You For Visiting Shree Kripa Midway Restaurant"
     bbox = draw.textbbox((0, 0), thanks_str, font=font_thanks)
-    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1410), thanks_str, fill=(251, 230, 155), font=font_thanks)
+    draw.text(((w - (bbox[2] - bbox[0])) / 2, 1425), thanks_str, fill=(251, 230, 155), font=font_thanks)
 
     canvas.save(output_filename, quality=95, dpi=(300, 300))
     print(f"[OK] Generated {output_filename} (300 DPI)")
