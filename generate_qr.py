@@ -449,6 +449,11 @@ def main():
     qr_menu.save("qr_landing_page.png")
     print("[OK] Saved qr_code.png")
 
+    # 1b. Save shared Luxury Interior Background for Landing Page (index.html) & Standee HTML
+    bg_shared = create_interior_luxury_background(1200, 1800, "assets/interior_hero.jpg")
+    bg_shared.save("assets/luxury_interior_bg.jpg", quality=92)
+    print("[OK] Saved assets/luxury_interior_bg.jpg")
+
     # 2. Front Standee (300 DPI)
     build_front_standee(cfg, ["table_standee_printable.png", "standee_front_printable.png"])
 
