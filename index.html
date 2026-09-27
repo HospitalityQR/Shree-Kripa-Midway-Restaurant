@@ -952,6 +952,130 @@
             line-height: 1.55;
             margin-bottom: 12px;
         }
+        .pkg-sub-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .pkg-flyer-wrap {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            margin-bottom: 14px;
+            position: relative;
+            cursor: pointer;
+            background: #04181c;
+        }
+        .pkg-flyer-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .pkg-flyer-wrap:hover .pkg-flyer-img {
+            transform: scale(1.02);
+        }
+        .pkg-zoom-hint {
+            background: rgba(4, 24, 28, 0.88);
+            color: var(--gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            padding: 6px 10px;
+            border-top: 1px solid rgba(212, 175, 55, 0.45);
+        }
+        .pkg-section-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .pkg-course-box {
+            background: rgba(4, 24, 28, 0.72);
+            border: 1px solid rgba(212, 175, 55, 0.42);
+            border-radius: 12px;
+            padding: 9px 12px;
+        }
+        .pkg-course-title {
+            font-family: var(--font-royal);
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pkg-course-items {
+            font-size: 12px;
+            color: #eaf4f4;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        .pkg-benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+            margin-top: 8px;
+        }
+        .pkg-benefit-pill {
+            background: rgba(12, 85, 50, 0.45);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 6px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .flyer-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 12, 15, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .flyer-lightbox.open {
+            display: flex;
+        }
+        .flyer-lightbox img {
+            max-width: 100%;
+            max-height: 84vh;
+            border-radius: 16px;
+            border: 2.5px solid var(--gold-primary);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85);
+            object-fit: contain;
+        }
+        .flyer-close-pill {
+            background: var(--gold-gradient);
+            color: #04181c;
+            border: 1.5px solid #ffffff;
+            border-radius: 24px;
+            padding: 8px 22px;
+            font-size: 13.5px;
+            font-weight: 800;
+            cursor: pointer;
+        }
         .back-to-menu-btn {
             display: inline-flex;
             align-items: center;
@@ -1401,8 +1525,8 @@
                     <div class="icon-box icon-party-box">🎉</div>
                     <div class="card-info">
                         <div class="card-title">Kitty & Dinner Party Packages</div>
-                        <div class="card-desc">Kitty Packages @ ₹299 • Dinner Buffet @ ₹549</div>
-                        <div class="card-tag">🎈 Tap to View Celebration Packages</div>
+                        <div class="card-desc">Kitty @ ₹299 • Dinner @ ₹549 • Gold @ ₹699 • Platinum @ ₹799</div>
+                        <div class="card-tag">🎈 Tap to View Celebration & Banquet Packages</div>
                     </div>
                 </div>
                 <div class="arrow-btn" aria-label="View Packages">
@@ -1474,10 +1598,11 @@
                     <span>🎉</span> Banquet & Celebration Packages
                 </div>
                 <div class="category-count">
-                    100% Pure Veg
+                    4 Packages
                 </div>
             </div>
 
+            <!-- 1. Kitty Party Package -->
             <div class="package-card">
                 <div class="package-header">
                     <div class="package-name">Kitty Party Package</div>
@@ -1491,6 +1616,7 @@
                 </div>
             </div>
 
+            <!-- 2. Lunch & Dinner Party -->
             <div class="package-card">
                 <div class="package-header">
                     <div class="package-name">Lunch & Dinner Party</div>
@@ -1501,6 +1627,105 @@
                 </p>
                 <div style="margin-top: 8px; font-size: 12px; color: var(--gold-dark); font-weight: 800;">
                     👑 Royal Buffet • 🧀 Paneer Exclusives • 🫓 Tandoor Basket • 🍮 Pure Ghee Halwa
+                </div>
+            </div>
+
+            <!-- 3. GOLD PACKAGE (₹699 Per Person) -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">👑 GOLD PACKAGE</div>
+                    <div class="package-price-tag">₹699 / Person</div>
+                </div>
+                <div class="pkg-sub-badge">👥 50 Members & Above • Banquet Booking Available</div>
+
+                <div class="pkg-flyer-wrap" onclick="openFlyerLightbox('assets/gold_package_699.jpg')">
+                    <img src="assets/gold_package_699.jpg" alt="Gold Package ₹699 Per Person" class="pkg-flyer-img">
+                    <div class="pkg-zoom-hint">🔍 Tap Poster to View Full Size</div>
+                </div>
+
+                <div class="pkg-section-list">
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍹 DRINK (ANY TWO)</div>
+                        <div class="pkg-course-items">• Mocktail 2 OR Soup 2 (Any Two)</div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍢 STARTER</div>
+                        <div class="pkg-course-items">• Paneer Starter (1 Item) &nbsp;• Non Paneer Starter (2 Items)</div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍛 MAIN COURSE</div>
+                        <div class="pkg-course-items">
+                            • Paneer Preparation (1 Item) &nbsp;• Non Paneer Preparation (1 Item)<br>
+                            • Kofta Preparation (1 Item) &nbsp;• Seasonal Vegetable (1 Item)<br>
+                            • Dal Makhni / Dal Tadka (Any One) &nbsp;• Rice / Butter Khichdi (Any One)
+                        </div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🥗 ACCOMPANIMENTS & 🍨 SWEET (ANY ONE)</div>
+                        <div class="pkg-course-items">
+                            • Accompaniments: Achar, Papad, Salad<br>
+                            • Sweet (Any One): Gulab Jamun OR Fruit Custard OR Ice Cream OR Rasgulla
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pkg-benefits-grid">
+                    <div class="pkg-benefit-pill">❄️ Fully AC Banquet Hall</div>
+                    <div class="pkg-benefit-pill">🎵 Music System</div>
+                    <div class="pkg-benefit-pill">🤵 Pro Service Staff</div>
+                    <div class="pkg-benefit-pill">🚗 Parking & 🌸 Basic Decor</div>
+                    <div class="pkg-benefit-pill">🍹 Free Welcome Drink</div>
+                    <div class="pkg-benefit-pill">🎂 Free 2 KG Cake (B'day/Anniv.)</div>
+                </div>
+            </div>
+
+            <!-- 4. PLATINUM PACKAGE (₹799 Per Person) -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">💎 PLATINUM PACKAGE</div>
+                    <div class="package-price-tag">₹799 / Person</div>
+                </div>
+                <div class="pkg-sub-badge">👥 50 Members & Above • Banquet Booking Available</div>
+
+                <div class="pkg-flyer-wrap" onclick="openFlyerLightbox('assets/platinum_package_799.jpg')">
+                    <img src="assets/platinum_package_799.jpg" alt="Platinum Package ₹799 Per Person" class="pkg-flyer-img">
+                    <div class="pkg-zoom-hint">🔍 Tap Poster to View Full Size</div>
+                </div>
+
+                <div class="pkg-section-list">
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍹 DRINK (ANY TWO)</div>
+                        <div class="pkg-course-items">• Mocktail 2 OR Soup 2 (Any Two)</div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍢 STARTER</div>
+                        <div class="pkg-course-items">• Paneer Starter (1 Item) &nbsp;• Cheese Starter (1 Item) &nbsp;• Non Paneer Starter (2 Items)</div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🍛 MAIN COURSE</div>
+                        <div class="pkg-course-items">
+                            • Paneer Preparation (1 Item) &nbsp;• Kaju Preparation (1 Item)<br>
+                            • Kofta Preparation (1 Item) &nbsp;• Seasonal Vegetable (1 Item)<br>
+                            • Dal Tadka / Dal Makhni (Any One) &nbsp;• Rice (1 Item)<br>
+                            • Roti / Nan / Paratha / Missi (Unlimited)
+                        </div>
+                    </div>
+                    <div class="pkg-course-box">
+                        <div class="pkg-course-title">🥗 ACCOMPANIMENTS & 🍨 SWEET (ANY TWO)</div>
+                        <div class="pkg-course-items">
+                            • Accompaniments: Achar, Papad, Salad<br>
+                            • Sweet (Any Two): Rabdi • Gulab Jamun • Rasgulla • Fruit Custard • Ice Cream • Rasmalai
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pkg-benefits-grid">
+                    <div class="pkg-benefit-pill">❄️ Fully AC Banquet Hall</div>
+                    <div class="pkg-benefit-pill">🎵 Music System</div>
+                    <div class="pkg-benefit-pill">🤵 Pro Service Staff</div>
+                    <div class="pkg-benefit-pill">🚗 Parking & 🌸 Basic Decor</div>
+                    <div class="pkg-benefit-pill">🍹 Free Welcome Drink</div>
+                    <div class="pkg-benefit-pill">🎂 Free 2 KG Cake (B'day/Anniv.)</div>
                 </div>
             </div>
 
@@ -2016,6 +2241,26 @@
             var waUrl = `https://wa.me/91${phone.replace(/\D/g, '')}?text=${encoded}`;
             window.open(waUrl, '_blank');
         }
+
+        function openFlyerLightbox(src) {
+            var lb = document.getElementById('flyerLightbox');
+            var img = document.getElementById('flyerLightboxImg');
+            if (lb && img) {
+                img.src = src;
+                lb.classList.add('open');
+            }
+        }
+
+        function closeFlyerLightbox() {
+            var lb = document.getElementById('flyerLightbox');
+            if (lb) lb.classList.remove('open');
+        }
     </script>
+
+    <!-- Fullscreen Package Poster Lightbox -->
+    <div class="flyer-lightbox" id="flyerLightbox" onclick="closeFlyerLightbox()">
+        <img id="flyerLightboxImg" src="assets/gold_package_699.jpg" alt="Party Package Poster" onclick="event.stopPropagation()">
+        <button class="flyer-close-pill" onclick="closeFlyerLightbox()">✕ Close Poster</button>
+    </div>
 </body>
 </html>

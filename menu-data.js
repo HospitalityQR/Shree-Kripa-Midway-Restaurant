@@ -122,7 +122,7 @@ var MENU_DATA = [
     { id: "pn_1", name: "Matar Paneer", nameHi: "मटर पनीर", category: "paneer", gravy: "Yellow Gravy", price: 250, prepTime: "20 Min" },
     { id: "pn_2", name: "Palak Paneer", nameHi: "पालक पनीर", category: "paneer", gravy: "Green Gravy", price: 250, prepTime: "20 Min" },
     { id: "pn_3", name: "Paneer Punjabi", nameHi: "पनीर पंजाबी", category: "paneer", gravy: "Red Gravy", price: 250, prepTime: "20 Min" },
-    { id: "pn_4", name: "Paneer Lababdar", nameHi: "पनीर लबाबदार", category: "paneer", gravy: "Yellow Gravy", price: 270, prepTime: "20 Min", isSpecial: true, img: "assets/food_paneer.jpg" },
+    { id: "pn_4", name: "Paneer Lababdar", nameHi: "पनीर लबाबदार", category: "paneer", gravy: "Yellow Gravy", price: 270, prepTime: "20 Min", img: "assets/food_paneer.jpg" },
     { id: "pn_5", name: "Paneer Chatpata", nameHi: "पनीर चटपटा", category: "paneer", gravy: "Red Gravy", price: 260, prepTime: "20 Min" },
     { id: "pn_6", name: "Butter Paneer Masala", nameHi: "बटर पनीर मसाला", category: "paneer", gravy: "Red Gravy", price: 280, prepTime: "20 Min", img: "assets/food_paneer.jpg" },
     { id: "pn_7", name: "Kadhai Paneer", nameHi: "कढ़ाई पनीर", category: "paneer", gravy: "Yellow Gravy", price: 280, prepTime: "20 Min" },
