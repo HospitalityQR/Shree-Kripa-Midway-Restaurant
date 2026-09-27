@@ -1823,7 +1823,7 @@
                 }
 
                 var pcsHtml = dish.pcs ? `<span class="badge-pcs">${dish.pcs}</span>` : '';
-                var specialHtml = dish.isSpecial ? `<span class="badge-special">⭐ Chef's Special</span>` : '';
+                var specialHtml = '';
                 var priceDisplay = typeof dish.price === 'number' ? `₹${dish.price}` : dish.price;
                 var thumbHtml = dish.img ? `<img src="${dish.img}" alt="${dish.name}" class="dish-thumb">` : '';
 
